@@ -24,8 +24,8 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm mb-6 sm:mb-8 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-muted-foreground font-medium">Available for remote product teams</span>
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-muted-foreground font-medium">US-Based • Available for Remote Teams</span>
             </div>
           </motion.div>
 

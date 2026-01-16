@@ -102,7 +102,8 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1 text-sm sm:text-base">Location</h4>
-                  <p className="text-muted-foreground text-sm sm:text-base">Houston, TX (Open to Remote)</p>
+                  <p className="text-muted-foreground text-sm sm:text-base">Houston, TX • US Citizen</p>
+                  <p className="text-muted-foreground/70 text-xs sm:text-sm">Open to Remote & On-site</p>
                 </div>
               </div>
             </div>
