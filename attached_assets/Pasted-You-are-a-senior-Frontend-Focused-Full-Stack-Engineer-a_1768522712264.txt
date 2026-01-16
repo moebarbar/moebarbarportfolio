@@ -1,0 +1,90 @@
+You are a senior Frontend-Focused Full-Stack Engineer and award-winning creative web designer.
+
+Build an extremely creative, modern, and highly interactive personal portfolio website that will be used to apply for Frontend-Focused Full-Stack Developer roles.
+
+PRIMARY GOALS:
+- Instantly impress recruiters and hiring managers
+- Showcase strong frontend skills, creativity, and clean engineering
+- Feel premium, modern, and memorable (not generic)
+- Be production-ready and deployable
+
+TECH STACK REQUIREMENTS:
+- Frontend: HTML, modern CSS (Tailwind or CSS Modules), JavaScript (ES6+)
+- Optional Framework: React (preferred)
+- Animations: GSAP or Framer Motion
+- 3D / Visual Effects: Subtle Three.js or advanced CSS effects (only if tasteful)
+- Responsive: Perfect on mobile, tablet, and desktop
+- Performance-optimized and accessible
+
+DESIGN & UX:
+- Unique hero section with animated intro (not stock layout)
+- Smooth page transitions and micro-interactions
+- Creative typography and spacing
+- Dark-mode first, with optional light-mode toggle
+- Cursor effects or hover interactions that feel premium
+- Scroll-based animations (parallax, reveal effects)
+- No template-like appearance
+
+SECTIONS TO INCLUDE:
+1. Hero Section
+   - Strong headline positioning me as a Frontend-Focused Full-Stack Developer
+   - Animated text or motion-based intro
+   - CTA buttons (View Projects, Contact Me)
+
+2. About Me
+   - Short but powerful personal summary
+   - Focus on frontend excellence + full-stack capability
+   - Animated timeline or creative layout
+
+3. Skills
+   - Interactive skill visualization (progress bars, cards, or animated icons)
+   - Frontend-heavy emphasis (JS, React, UI/UX, animations)
+   - Backend/tools section (APIs, databases, auth, deployment)
+
+4. Projects
+   - Highly visual project cards
+   - Hover effects + modal or dedicated project pages
+   - Each project shows:
+     - Tech stack
+     - Key problems solved
+     - Live demo link
+     - GitHub link
+
+5. Experience / Journey
+   - Creative representation (timeline, scroll-driven storytelling)
+
+6. Contact
+   - Modern animated contact form
+   - Email + social links
+   - Subtle success/error animations
+
+7. Footer
+   - Minimal, stylish, and branded
+
+FUNCTIONAL REQUIREMENTS:
+- Fully working contact form (mock backend or simple API)
+- Clean folder structure
+- Reusable components
+- Easy to customize content
+- SEO-friendly structure
+- Deployed-ready configuration
+
+EXTRA WOW FACTORS (use if appropriate):
+- Dynamic background effects
+- Text morphing or typewriter effects
+- Page transition animations
+- Smart use of sound or motion feedback (very subtle)
+- Lighthouse-friendly performance
+
+DELIVERABLE:
+- Complete working code
+- Clear comments explaining key creative and technical decisions
+- Ready to deploy and share as a portfolio link
+
+IMPORTANT:
+Do NOT use generic templates.
+Do NOT create a basic portfolio.
+This must feel custom-built, creative, and high-end.
+Think "this developer clearly knows frontend deeply."
+
+Build the project now.
