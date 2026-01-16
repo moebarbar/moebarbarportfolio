@@ -1,0 +1,108 @@
+You are a senior Frontend Engineer and award-winning creative web designer.
+
+Build an extremely creative, modern, and highly interactive personal portfolio website for a Frontend-Focused Full-Stack Web Developer with strong frontend specialization.
+
+DEVELOPER PROFILE (USE THIS FOR ALL CONTENT):
+I am a Frontend-focused Full-Stack Web Developer with hands-on experience building modern, responsive web applications using React and JavaScript.
+My main strength is crafting clean, high-performance user interfaces with excellent UX and smooth interactions.
+I have experience working with Node.js on the backend and integrating APIs when needed.
+I also have practical experience integrating AI features such as chat interfaces and automation, but my primary focus is frontend development.
+I am seeking a remote role with a product-driven team where frontend quality matters.
+
+This positioning must be clearly reflected in:
+- Hero headline and subheadline
+- About section
+- Project descriptions
+- Overall tone of the website
+
+PRIMARY GOALS:
+- Instantly communicate strong frontend expertise
+- Showcase UI/UX thinking, animations, and responsiveness
+- Demonstrate real-world frontend problem-solving
+- Feel premium, modern, and highly polished
+- Be production-ready and deployable
+
+TECH STACK REQUIREMENTS:
+- Frontend: HTML, modern CSS (Tailwind preferred), JavaScript (ES6+)
+- Framework: React (preferred)
+- Animations: Framer Motion or GSAP
+- Styling focus: layout, spacing, typography, responsiveness
+- Backend (light use): Node.js or mock APIs only where needed
+- Fully responsive and accessible
+- Performance-optimized
+
+DESIGN & UX DIRECTION:
+- Frontend-first design (UI quality over backend complexity)
+- Dark-mode first (optional light mode toggle)
+- Unique hero section (no template layouts)
+- Smooth scroll-based animations
+- High-quality hover states and micro-interactions
+- Clean, modern, product-style UI
+- Optional subtle cursor effects (professional, not flashy)
+
+SECTIONS TO INCLUDE:
+
+1. Hero Section
+   - Clear headline: “Frontend-Focused Full-Stack Web Developer”
+   - Subheadline emphasizing React, UI, performance, and UX
+   - Animated intro text or motion-based layout
+   - CTA buttons: “View Work” and “Contact”
+
+2. About Me
+   - Short, confident frontend-focused narrative
+   - Emphasis on UI quality, responsiveness, and performance
+   - Mention backend and AI as supporting skills only
+
+3. Skills
+   - Frontend-heavy skill visualization:
+     - React, JavaScript, HTML, CSS, Tailwind
+     - UI/UX, Accessibility, Performance Optimization
+     - Animations and interaction design
+   - Supporting skills:
+     - Node.js, APIs, Git/GitHub
+     - Basic AI integrations
+
+4. Projects (MOST IMPORTANT SECTION)
+   - Frontend-focused projects:
+     - Landing pages
+     - Dashboards
+     - Interactive web apps
+   - Each project shows:
+     - UI/UX challenges solved
+     - Performance or responsiveness improvements
+     - Tech stack
+     - Live demo + GitHub
+   - Creative hover effects or transitions
+
+5. Experience / Journey
+   - Visual timeline or scroll-driven story
+   - Focus on growth as a frontend developer
+
+6. Contact
+   - Clean, modern animated contact form
+   - Email and social links
+   - Smooth success/error animations
+
+7. Footer
+   - Minimal and professional
+   - Reinforce frontend developer branding
+
+FUNCTIONAL REQUIREMENTS:
+- Clean and scalable component structure
+- Reusable React components
+- Easy-to-edit content
+- SEO-friendly structure
+- Ready for deployment
+
+IMPORTANT RULES:
+- Do NOT use generic portfolio templates
+- Do NOT over-focus on backend or SaaS
+- Frontend quality, UI polish, and UX matter most
+- Animations must be smooth and purposeful
+
+DELIVERABLE:
+- Complete working code
+- Well-commented components
+- Ready-to-deploy creative frontend portfolio
+
+Build the project now.

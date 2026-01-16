@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Code, Bot, Sparkles } from "lucide-react";
+import { ArrowDown, Code, Palette, Smartphone } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_dark_neon_fluid_glassmorphism_background.png";
 
 export function Hero() {
@@ -25,7 +25,7 @@ export function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-muted-foreground font-medium">Available for remote product roles</span>
+              <span className="text-muted-foreground font-medium">Available for remote product teams</span>
             </div>
           </motion.div>
 
@@ -37,7 +37,7 @@ export function Hero() {
           >
             Frontend Focused.
             <br />
-            <span className="text-gradient-primary">AI & SaaS Engineered.</span>
+            <span className="text-gradient-primary">Pixel Perfectionist.</span>
           </motion.h1>
 
           <motion.p
@@ -46,8 +46,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light leading-relaxed"
           >
-            I build modern, responsive web applications with React and Node.js. 
-            Specializing in integrating Generative AI, automation workflows, and high-performance SaaS dashboards.
+            I craft clean, high-performance user interfaces with excellent UX and smooth interactions. 
+            Frontend-focused full-stack developer specializing in React, modern animations, and responsive design.
           </motion.p>
 
           <motion.div
@@ -60,7 +60,7 @@ export function Hero() {
               href="#projects"
               className="px-8 py-4 bg-primary text-white rounded-full font-medium text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_0_20px_rgba(124,58,237,0.3)]"
             >
-              View Projects
+              View Work
             </a>
             <a
               href="#contact"
@@ -86,7 +86,15 @@ export function Hero() {
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute bottom-1/3 right-10 md:right-20 p-4 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl hidden lg:block"
       >
-        <Bot className="text-accent w-8 h-8" />
+        <Palette className="text-accent w-8 h-8" />
+      </motion.div>
+      
+      <motion.div 
+        animate={{ y: [0, -15, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-1/4 left-10 md:left-32 p-3 bg-black/40 backdrop-blur-xl border border-white/10 rounded-xl hidden lg:block"
+      >
+        <Smartphone className="text-purple-400 w-6 h-6" />
       </motion.div>
 
       <motion.div

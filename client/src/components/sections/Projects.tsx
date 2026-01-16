@@ -1,36 +1,36 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight, Sparkles } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, LayoutTemplate } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "AI Support Agent SaaS",
-    description: "A customer support automation platform featuring a custom-trained AI chatbot. Reduces ticket volume by 40% using RAG (Retrieval Augmented Generation) to answer queries from documentation.",
-    tags: ["React", "OpenAI API", "Node.js", "Vector DB", "Tailwind"],
-    image: "linear-gradient(to bottom right, #4c1d95, #0f172a)", 
+    title: "Neon Analytics Dashboard",
+    description: "A visually stunning, high-performance analytics dashboard. Focused on complex data visualization using Recharts, dark mode aesthetics, and a responsive grid layout that adapts perfectly to any device.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Framer Motion"],
+    image: "linear-gradient(to bottom right, #2E1065, #000000)", 
     link: "#",
     github: "#",
-    badge: "AI Powered"
+    badge: "UI / UX Focused"
   },
   {
     id: 2,
-    title: "Analytics Dashboard Pro",
-    description: "High-performance SaaS dashboard for real-time data visualization. Features drag-and-drop widget customization, dark mode, and seamless API integration for live metrics.",
-    tags: ["Next.js", "TypeScript", "Recharts", "Drizzle ORM", "Auth.js"],
-    image: "linear-gradient(to bottom right, #042f2e, #020617)",
-    link: "#",
-    github: "#",
-    badge: "SaaS Product"
-  },
-  {
-    id: 3,
-    title: "Workflow Automator",
-    description: "Visual automation tool allowing users to connect different apps and trigger AI actions. Similar to Zapier but focused on generative AI content creation workflows.",
-    tags: ["React Flow", "Express", "PostgreSQL", "Webhooks", "Redis"],
+    title: "Visual Workflow Builder",
+    description: "An interactive drag-and-drop interface for building automation flows. Demonstrates complex state management, custom node rendering, and smooth canvas interactions using React Flow.",
+    tags: ["React", "React Flow", "Zustand", "Dnd-Kit", "Tailwind"],
     image: "linear-gradient(to bottom right, #831843, #2a0a18)",
     link: "#",
     github: "#",
-    badge: "Automation"
+    badge: "Interactive UI"
+  },
+  {
+    id: 3,
+    title: "Lumina Landing Page",
+    description: "A premium landing page for a SaaS product featuring scroll-driven animations, parallax effects, and glassmorphism UI elements. Optimized for Core Web Vitals and accessibility.",
+    tags: ["Next.js", "GSAP", "Tailwind", "Radix UI"],
+    image: "linear-gradient(to bottom right, #042f2e, #020617)",
+    link: "#",
+    github: "#",
+    badge: "Motion Design"
   }
 ];
 
@@ -44,9 +44,9 @@ export function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">Featured Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">Selected Work</h2>
             <p className="text-muted-foreground max-w-xl">
-              Real-world applications showcasing AI integration, SaaS architecture, and complex frontend logic.
+              Showcasing my ability to solve complex UI challenges and deliver polished, user-centric experiences.
             </p>
           </motion.div>
           
@@ -77,9 +77,9 @@ export function Projects() {
                 className="h-64 md:h-80 w-full rounded-2xl overflow-hidden shadow-2xl relative"
                 style={{ background: project.image }}
               >
-                <div className="absolute top-4 right-4 z-20">
+                 <div className="absolute top-4 right-4 z-20">
                     <span className="flex items-center gap-1.5 px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-medium border border-white/10 text-white">
-                        <Sparkles className="w-3 h-3 text-accent" />
+                        <LayoutTemplate className="w-3 h-3 text-accent" />
                         {project.badge}
                     </span>
                 </div>

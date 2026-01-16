@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
 import { 
-  Bot,
+  Code2, 
   Cpu, 
-  Database, 
+  Figma, 
   Layout, 
-  Server,
-  Workflow
+  MonitorSmartphone,
+  Server
 } from "lucide-react";
 
 const skills = [
   {
-    category: "Frontend Excellence",
-    icon: <Layout className="w-6 h-6 text-primary" />,
-    items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Framer Motion", "Responsive UI"]
+    category: "Frontend Core",
+    icon: <Code2 className="w-6 h-6 text-primary" />,
+    items: ["React", "JavaScript (ES6+)", "TypeScript", "HTML5/CSS3", "Next.js"]
   },
   {
-    category: "AI & Automation",
-    icon: <Bot className="w-6 h-6 text-accent" />,
-    items: ["OpenAI API", "LangChain", "Chatbot UI", "Automation Workflows", "Prompt Engineering"]
+    category: "UI & Styling",
+    icon: <Layout className="w-6 h-6 text-accent" />,
+    items: ["Tailwind CSS", "Framer Motion", "GSAP", "Responsive Design", "Shadcn UI"]
   },
   {
-    category: "Backend & Data",
-    icon: <Database className="w-6 h-6 text-purple-400" />,
-    items: ["Node.js", "Express", "PostgreSQL", "Prisma/Drizzle", "RESTful APIs", "Supabase"]
+    category: "Design & UX",
+    icon: <Figma className="w-6 h-6 text-purple-400" />,
+    items: ["Figma", "Accessibility (a11y)", "User Flows", "Wireframing", "Prototyping"]
   },
   {
-    category: "DevOps & Tools",
-    icon: <Workflow className="w-6 h-6 text-pink-400" />,
-    items: ["Git/GitHub", "Docker", "Vite", "CI/CD Pipelines", "Jest/Testing", "Agile/Scrum"]
+    category: "Supporting Skills",
+    icon: <Server className="w-6 h-6 text-pink-400" />,
+    items: ["Node.js", "Git/GitHub", "API Integration", "Basic AI Integration", "Vite"]
   }
 ];
 
@@ -41,9 +41,9 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-syne mb-6">Tech Stack</h2>
+          <h2 className="text-4xl md:text-5xl font-bold font-syne mb-6">Technical Capabilities</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A modern, performance-driven stack focused on scalability and AI integration.
+            My expertise is centered on the frontend ecosystem, supported by solid full-stack knowledge.
           </p>
         </motion.div>
 

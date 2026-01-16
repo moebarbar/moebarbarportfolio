@@ -6,21 +6,21 @@ const experiences = [
     role: "Frontend-Focused Full-Stack Developer",
     company: "Freelance / Contract",
     period: "2023 - Present",
-    description: "Building custom SaaS solutions and AI-powered web applications. Specializing in RAG chatbots, automation dashboards, and high-performance React frontends connected to Node.js backends."
+    description: "Designing and developing premium user interfaces for web applications. Focused on component library creation, performance optimization, and implementing complex animations using Framer Motion."
   },
   {
     id: 2,
-    role: "Frontend Developer",
-    company: "TechAgency Studio",
+    role: "Frontend Engineer",
+    company: "Creative Studio",
     period: "2021 - 2023",
-    description: "Led the frontend development of multiple client projects using React and Next.js. Implemented responsive designs, complex state management, and optimized API integrations."
+    description: "Spearheaded the frontend modernization of client websites using React and Next.js. Improved Core Web Vitals scores by 35% and introduced a new accessibility-first design system."
   },
   {
     id: 3,
-    role: "Junior Web Developer",
-    company: "Digital Innovations",
-    period: "2020 - 2021",
-    description: "Collaborated on full-stack web projects. Assisted in backend API development with Node.js and maintained legacy frontend codebases."
+    role: "Web Developer",
+    company: "Digital Solutions Agency",
+    period: "2019 - 2021",
+    description: "Built responsive layouts from Figma designs with pixel-perfect accuracy. Collaborated with backend teams to integrate RESTful APIs into dynamic front-end applications."
   }
 ];
 
@@ -34,8 +34,8 @@ export function Experience() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold font-syne mb-4">Experience</h2>
-          <p className="text-muted-foreground">My professional journey in web development and AI.</p>
+          <h2 className="text-4xl font-bold font-syne mb-4">Professional Journey</h2>
+          <p className="text-muted-foreground">My path to becoming a UI/UX specialist.</p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto relative">
