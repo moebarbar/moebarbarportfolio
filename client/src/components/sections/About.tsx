@@ -67,7 +67,7 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-             <h2 className="text-4xl md:text-5xl font-bold font-syne mb-8 leading-normal">
+             <h2 className="text-4xl md:text-5xl font-bold font-syne mb-8 leading-[1.2]">
               Elevating the <br />
               <span className="text-gradient-primary">User Experience.</span>
             </h2>
