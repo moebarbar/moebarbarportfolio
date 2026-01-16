@@ -45,11 +45,20 @@ export function Navbar() {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           className="text-2xl font-bold font-syne tracking-tighter hover:text-primary transition-colors"
         >
-          MOE<span className="text-primary">.BARBAR</span>
+          MOE <span className="text-primary">BARBAR</span>
         </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
+          <a
+            href="https://www.linkedin.com/in/moe-barbar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="LinkedIn Profile"
+          >
+            <Linkedin size={20} />
+          </a>
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -104,7 +113,7 @@ export function Navbar() {
                 <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
                   <Github size={24} />
                 </a>
-                <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/moe-barbar/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
                   <Linkedin size={24} />
                 </a>
                 <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
