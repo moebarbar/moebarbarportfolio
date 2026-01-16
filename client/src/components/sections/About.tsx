@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Layers, Palette, Zap } from "lucide-react";
+import portrait1 from "@assets/F7DE7CCA-17B1-4B7C-AD4D-A25F6CD86B03_1768523387362.JPEG";
+import portraitWorking from "@assets/IMG_8230_1768523511496.JPG";
 
 export function About() {
   return (
@@ -14,20 +16,49 @@ export function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative z-10 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <h3 className="text-2xl font-syne font-bold mb-4 text-white">The Frontend Craftsman</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                I am a Frontend-focused Full-Stack Web Developer with a passion for building beautiful, responsive, and high-performance web applications. My main strength is crafting polished user interfaces that delight users.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                While I have practical experience with Node.js backends and AI integrations, my heart lies in the frontend. I obsess over micro-interactions, accessibility, and pixel-perfect design implementation.
-              </p>
+            {/* Creative Portrait Composition */}
+            <div className="relative group">
+               {/* Back glowing shape */}
+               <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent opacity-30 blur-2xl rounded-[30px] group-hover:opacity-50 transition-opacity duration-500" />
+               
+               {/* Main Frame */}
+               <div className="relative h-[500px] w-full rounded-[30px] overflow-hidden border border-white/10 bg-black/40 backdrop-blur-md">
+                  
+                  {/* Grid Pattern Overlay */}
+                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-10 mix-blend-overlay pointer-events-none" />
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] z-10 pointer-events-none" />
+
+                  {/* Primary Image (Masked) */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
+                    style={{ backgroundImage: `url(${portrait1})` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  </div>
+
+                  {/* Secondary Image (Reveal on Hover) */}
+                   <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-all duration-700 scale-105 group-hover:scale-100 group-hover:opacity-100"
+                    style={{ backgroundImage: `url(${portraitWorking})` }}
+                  >
+                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                     <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
+                  </div>
+
+                  {/* Text Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20 transform transition-transform duration-500 group-hover:-translate-y-2">
+                     <div className="inline-block px-3 py-1 mb-3 text-xs font-mono text-primary bg-primary/10 border border-primary/20 rounded-full">
+                        System.Identity
+                     </div>
+                     <h3 className="text-3xl font-syne font-bold text-white mb-2">Moe Barbar</h3>
+                     <p className="text-zinc-400">Frontend Engineer</p>
+                  </div>
+               </div>
+
+               {/* Decorative Elements */}
+               <div className="absolute -top-6 -right-6 w-24 h-24 border-t-2 border-r-2 border-primary/30 rounded-tr-3xl" />
+               <div className="absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-accent/30 rounded-bl-3xl" />
             </div>
-            
-            {/* Decorative background shape */}
-            <div className="absolute -top-10 -left-10 w-full h-full border border-primary/20 rounded-3xl -z-10 translate-x-4 translate-y-4" />
           </motion.div>
 
           <motion.div
@@ -41,9 +72,13 @@ export function About() {
               <span className="text-gradient-primary">User Experience.</span>
             </h2>
             
+            <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
+               I am a Frontend-focused Full-Stack Web Developer with a passion for building beautiful, responsive, and high-performance web applications. My main strength is crafting polished user interfaces that delight users.
+            </p>
+
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-primary/20">
                   <Palette className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -52,8 +87,8 @@ export function About() {
                 </div>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-accent/20">
                   <Zap className="w-6 h-6 text-accent" />
                 </div>
                 <div>
@@ -62,8 +97,8 @@ export function About() {
                 </div>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-purple-500/20">
                   <Layers className="w-6 h-6 text-purple-400" />
                 </div>
                 <div>
