@@ -25,6 +25,38 @@ export function Footer() {
             </a>
           </div>
         </div>
+        
+        <div className="mt-8 pt-6 border-t border-white/5 text-center">
+          <p className="text-muted-foreground text-sm">
+            Built with ❤️ by{" "}
+            <a 
+              href="https://www.linkedin.com/in/moe-barbar/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-white transition-colors"
+            >
+              Moe Barbar
+            </a>
+            {" "}•{" "}
+            <a 
+              href="https://www.linkedin.com/in/moe-barbar/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              LinkedIn
+            </a>
+            {" "}•{" "}
+            <a 
+              href="https://instagram.com/immoebar" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Instagram
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
