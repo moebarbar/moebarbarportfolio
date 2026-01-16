@@ -45,7 +45,7 @@ export function Navbar() {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           className="text-2xl font-bold font-syne tracking-tighter hover:text-primary transition-colors"
         >
-          ALEX<span className="text-primary">.DEV</span>
+          MOE<span className="text-primary">.BARBAR</span>
         </a>
 
         {/* Desktop Nav */}

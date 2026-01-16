@@ -7,9 +7,9 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold font-syne text-white mb-2">ALEX.DEV</h3>
+            <h3 className="text-2xl font-bold font-syne text-white mb-2">MOE.BARBAR</h3>
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} Alex Dev. All rights reserved.
+              © {new Date().getFullYear()} Moe Barbar. All rights reserved.
             </p>
           </div>
 

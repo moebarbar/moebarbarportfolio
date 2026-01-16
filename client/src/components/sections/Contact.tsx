@@ -61,7 +61,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Email</h4>
-                  <a href="mailto:hello@alex.dev" className="text-muted-foreground hover:text-primary transition-colors">hello@alex.dev</a>
+                  <a href="mailto:hello@moe.barbar" className="text-muted-foreground hover:text-primary transition-colors">hello@moe.barbar</a>
                 </div>
               </div>
               
