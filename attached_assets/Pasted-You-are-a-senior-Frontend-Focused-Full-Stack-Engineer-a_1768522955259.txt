@@ -1,0 +1,112 @@
+You are a senior Frontend-Focused Full-Stack Engineer and award-winning creative web designer.
+
+Build an extremely creative, modern, and highly interactive personal portfolio website for a Frontend-Focused Full-Stack Web Developer.
+
+DEVELOPER PROFILE (USE THIS EXACTLY FOR POSITIONING & CONTENT):
+I am a Frontend-focused Full-Stack Web Developer with hands-on experience building modern, responsive web applications using React, JavaScript, and Node.js.
+I specialize in integrating Generative AI features into real-world products, including AI chatbots, automation workflows, and SaaS-style dashboards.
+I have a strong focus on clean UI, performance, and solving real business problems.
+I am seeking a remote role with a product-driven team.
+
+This positioning should be clearly reflected in:
+- Hero headline & subheadline
+- About section narrative
+- Projects descriptions
+- Overall tone and messaging
+
+PRIMARY GOALS:
+- Instantly impress recruiters and hiring managers
+- Communicate strong frontend excellence with full-stack depth
+- Highlight real-world AI + SaaS product experience
+- Feel premium, modern, and memorable (not generic)
+- Be production-ready and deployable
+
+TECH STACK REQUIREMENTS:
+- Frontend: HTML, modern CSS (Tailwind preferred), JavaScript (ES6+)
+- Framework: React (preferred)
+- Backend: Node.js (mock API or simple backend setup)
+- Animations: Framer Motion or GSAP
+- Optional visual depth: subtle Three.js or advanced CSS effects (only if tasteful)
+- Fully responsive and accessible
+- Optimized for performance and SEO
+
+DESIGN & UX DIRECTION:
+- Dark-mode first (with optional light-mode toggle)
+- Unique animated hero section (no template layouts)
+- Smooth scroll-based animations and micro-interactions
+- Clean, modern, SaaS-inspired UI
+- Creative typography and spacing
+- Premium hover states and transitions
+- Optional cursor interaction (subtle and professional)
+
+SECTIONS TO INCLUDE:
+
+1. Hero Section
+   - Strong headline positioning me as a Frontend-Focused Full-Stack Web Developer
+   - Subheadline mentioning React, AI integrations, SaaS dashboards
+   - Animated intro text or motion-driven layout
+   - Clear CTAs: “View Projects” and “Contact Me”
+
+2. About Me
+   - Concise but powerful story using the provided profile
+   - Emphasize frontend mastery, AI integrations, and business problem-solving
+   - Creative layout or motion-based storytelling
+
+3. Skills
+   - Interactive skill visualization
+   - Frontend-heavy emphasis:
+     - React, JavaScript, UI/UX, Performance, Animations
+   - Full-stack & AI tools:
+     - Node.js, APIs, Auth, Databases
+     - Generative AI, Chatbots, Automation, SaaS dashboards
+
+4. Projects
+   - Visually rich project cards
+   - SaaS-style projects preferred
+   - Each project shows:
+     - Problem solved
+     - AI or automation feature (if applicable)
+     - Tech stack
+     - Live demo link
+     - GitHub link
+   - Hover effects + modal or detailed project views
+
+5. Experience / Journey
+   - Creative timeline or scroll-driven journey
+   - Show progression into AI-powered products and SaaS tools
+
+6. Contact
+   - Modern animated contact form
+   - Email and social links
+   - Smooth success/error feedback animations
+
+7. Footer
+   - Minimal, clean, and branded
+   - Reinforce developer positioning
+
+FUNCTIONAL REQUIREMENTS:
+- Working contact form (mock backend or Node.js endpoint)
+- Clean, scalable folder structure
+- Reusable components
+- Easy content customization
+- SEO-friendly HTML structure
+- Ready for deployment
+
+EXTRA WOW FACTORS (USE ONLY IF THEY ADD VALUE):
+- Text morphing or typewriter effects
+- Page transition animations
+- Subtle parallax or depth effects
+- Smart animation timing (performance-first)
+
+IMPORTANT RULES:
+- Do NOT use generic templates
+- Do NOT create a basic portfolio
+- This must feel custom-built, creative, and high-end
+- Prioritize clarity, performance, and real-world product thinking
+
+DELIVERABLE:
+- Complete working code
+- Clear comments explaining creative and technical decisions
+- Ready-to-deploy portfolio website
+
+Build the project now.

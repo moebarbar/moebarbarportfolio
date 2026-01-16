@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BrainCircuit, Layers, Rocket } from "lucide-react";
 
 export function About() {
   return (
@@ -16,12 +17,12 @@ export function About() {
             <div className="relative z-10 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <h3 className="text-2xl font-syne font-bold mb-4 text-white">Who I Am</h3>
+              <h3 className="text-2xl font-syne font-bold mb-4 text-white">The Developer</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                I'm a Frontend-Focused Full-Stack Engineer who bridges the gap between design and engineering. With a strong foundation in modern frontend architectures and backend systems, I build scalable web applications that look beautiful and perform flawlessly.
+                I am a Frontend-focused Full-Stack Web Developer who builds real-world products, not just websites. My passion lies in bridging the gap between clean, responsive UI and powerful backend logic.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I don't just write code; I craft digital experiences. My approach combines technical precision with creative flair, ensuring every pixel serves a purpose and every interaction feels natural.
+                I specialize in integrating Generative AI into practical business applications—from intelligent chatbots to automated workflows. I focus on solving actual business problems with performance-first engineering and intuitive design.
               </p>
             </div>
             
@@ -36,38 +37,38 @@ export function About() {
             transition={{ duration: 0.8 }}
           >
              <h2 className="text-4xl md:text-5xl font-bold font-syne mb-8">
-              Engineering with <br />
-              <span className="text-gradient-primary">Design Soul.</span>
+              Building the Future of <br />
+              <span className="text-gradient-primary">SaaS & AI.</span>
             </h2>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-2xl">🎨</span>
+                  <Rocket className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Creative Developer</h4>
-                  <p className="text-muted-foreground">I bring designs to life with smooth animations, interactive elements, and responsive layouts.</p>
+                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Product-Driven</h4>
+                  <p className="text-muted-foreground">I build with the end-user in mind. Clean UI, intuitive UX, and features that solve real pain points.</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-2xl">⚡</span>
+                  <BrainCircuit className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Performance Obsessed</h4>
-                  <p className="text-muted-foreground">Slow sites lose users. I optimize every line of code for maximum speed and accessibility.</p>
+                  <h4 className="text-xl font-bold text-white mb-2 font-syne">AI Integration</h4>
+                  <p className="text-muted-foreground">Hands-on experience implementing LLMs, chatbots, and automation workflows into production apps.</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-2xl">🛠️</span>
+                  <Layers className="w-6 h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Full-Stack Architect</h4>
-                  <p className="text-muted-foreground">While I love frontend, I'm fully capable of building robust backends with Node, SQL, and APIs.</p>
+                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Full-Stack Capability</h4>
+                  <p className="text-muted-foreground">Strong frontend mastery backed by solid Node.js and database skills to build complete solutions.</p>
                 </div>
               </div>
             </div>

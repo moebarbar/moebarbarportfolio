@@ -1,33 +1,36 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, Sparkles } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "Neon Commerce",
-    description: "A high-performance e-commerce dashboard featuring real-time analytics, inventory management, and a dark-mode first UI designed for power users.",
-    tags: ["React", "TypeScript", "Tailwind", "Recharts"],
-    image: "linear-gradient(to bottom right, #2E1065, #000000)", // Placeholder for now
+    title: "AI Support Agent SaaS",
+    description: "A customer support automation platform featuring a custom-trained AI chatbot. Reduces ticket volume by 40% using RAG (Retrieval Augmented Generation) to answer queries from documentation.",
+    tags: ["React", "OpenAI API", "Node.js", "Vector DB", "Tailwind"],
+    image: "linear-gradient(to bottom right, #4c1d95, #0f172a)", 
     link: "#",
-    github: "#"
+    github: "#",
+    badge: "AI Powered"
   },
   {
     id: 2,
-    title: "TaskFlow Pro",
-    description: "Collaborative project management tool with drag-and-drop kanban boards, live team chat, and automated workflow triggers.",
-    tags: ["Next.js", "Socket.io", "PostgreSQL", "Prisma"],
-    image: "linear-gradient(to bottom right, #115e59, #042f2e)", // Placeholder
+    title: "Analytics Dashboard Pro",
+    description: "High-performance SaaS dashboard for real-time data visualization. Features drag-and-drop widget customization, dark mode, and seamless API integration for live metrics.",
+    tags: ["Next.js", "TypeScript", "Recharts", "Drizzle ORM", "Auth.js"],
+    image: "linear-gradient(to bottom right, #042f2e, #020617)",
     link: "#",
-    github: "#"
+    github: "#",
+    badge: "SaaS Product"
   },
   {
     id: 3,
-    title: "CryptoDash Web3",
-    description: "DeFi asset tracker connecting to multiple blockchains. Features real-time price updates, portfolio visualization, and wallet integration.",
-    tags: ["Web3.js", "React", "Framer Motion", "D3.js"],
-    image: "linear-gradient(to bottom right, #be185d, #4c0519)", // Placeholder
+    title: "Workflow Automator",
+    description: "Visual automation tool allowing users to connect different apps and trigger AI actions. Similar to Zapier but focused on generative AI content creation workflows.",
+    tags: ["React Flow", "Express", "PostgreSQL", "Webhooks", "Redis"],
+    image: "linear-gradient(to bottom right, #831843, #2a0a18)",
     link: "#",
-    github: "#"
+    github: "#",
+    badge: "Automation"
   }
 ];
 
@@ -41,9 +44,9 @@ export function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">Featured Work</h2>
+            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">Featured Projects</h2>
             <p className="text-muted-foreground max-w-xl">
-              A selection of projects that showcase my ability to solve complex problems with elegant code.
+              Real-world applications showcasing AI integration, SaaS architecture, and complex frontend logic.
             </p>
           </motion.div>
           
@@ -74,6 +77,13 @@ export function Projects() {
                 className="h-64 md:h-80 w-full rounded-2xl overflow-hidden shadow-2xl relative"
                 style={{ background: project.image }}
               >
+                <div className="absolute top-4 right-4 z-20">
+                    <span className="flex items-center gap-1.5 px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-medium border border-white/10 text-white">
+                        <Sparkles className="w-3 h-3 text-accent" />
+                        {project.badge}
+                    </span>
+                </div>
+
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 bg-black/40 backdrop-blur-sm">
                   <a href={project.link} className="p-3 bg-white text-black rounded-full hover:scale-110 transition-transform">

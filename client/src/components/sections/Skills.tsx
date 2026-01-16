@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
 import { 
-  Code2, 
+  Bot,
+  Cpu, 
   Database, 
   Layout, 
-  Smartphone, 
-  Terminal, 
-  Zap 
+  Server,
+  Workflow
 } from "lucide-react";
 
 const skills = [
   {
-    category: "Frontend Core",
+    category: "Frontend Excellence",
     icon: <Layout className="w-6 h-6 text-primary" />,
-    items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML5/CSS3"]
+    items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Framer Motion", "Responsive UI"]
   },
   {
-    category: "UI & Animation",
-    icon: <Zap className="w-6 h-6 text-accent" />,
-    items: ["Framer Motion", "GSAP", "Three.js", "Shadcn UI", "Figma"]
+    category: "AI & Automation",
+    icon: <Bot className="w-6 h-6 text-accent" />,
+    items: ["OpenAI API", "LangChain", "Chatbot UI", "Automation Workflows", "Prompt Engineering"]
   },
   {
     category: "Backend & Data",
     icon: <Database className="w-6 h-6 text-purple-400" />,
-    items: ["Node.js", "PostgreSQL", "Prisma/Drizzle", "Express", "REST APIs"]
+    items: ["Node.js", "Express", "PostgreSQL", "Prisma/Drizzle", "RESTful APIs", "Supabase"]
   },
   {
-    category: "Tools & DevOps",
-    icon: <Terminal className="w-6 h-6 text-pink-400" />,
-    items: ["Git/GitHub", "Docker", "Vite", "Jest", "CI/CD"]
+    category: "DevOps & Tools",
+    icon: <Workflow className="w-6 h-6 text-pink-400" />,
+    items: ["Git/GitHub", "Docker", "Vite", "CI/CD Pipelines", "Jest/Testing", "Agile/Scrum"]
   }
 ];
 
@@ -41,9 +41,9 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-syne mb-6">Technical Arsenal</h2>
+          <h2 className="text-4xl md:text-5xl font-bold font-syne mb-6">Tech Stack</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My stack is chosen for performance, scalability, and developer experience.
+            A modern, performance-driven stack focused on scalability and AI integration.
           </p>
         </motion.div>
 
@@ -61,7 +61,7 @@ export function Skills() {
                 {group.icon}
               </div>
               <h3 className="text-xl font-bold font-syne mb-4">{group.category}</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {group.items.map((skill) => (
                   <li key={skill} className="flex items-center gap-2 text-muted-foreground text-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-primary transition-colors" />
