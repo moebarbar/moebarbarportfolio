@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -15,10 +16,12 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
+type FormData = z.infer<typeof formSchema>;
+
 export function Contact() {
   const { toast } = useToast();
   
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -27,13 +30,41 @@ export function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  const contactMutation = useMutation({
+    mutationFn: async (data: FormData) => {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "Failed to send message");
+      }
+      
+      return response.json();
+    },
+    onSuccess: (data) => {
+      toast({
+        title: "Message sent!",
+        description: data.message || "Thanks for reaching out. I'll get back to you soon.",
+      });
+      form.reset();
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Failed to send message",
+        description: error.message,
+        variant: "destructive",
+      });
+    },
+  });
+
+  function onSubmit(values: FormData) {
+    contactMutation.mutate(values);
   }
 
   return (
@@ -102,7 +133,12 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your name" {...field} className="bg-white/5 border-white/10 focus:border-primary/50 h-12" />
+                        <Input 
+                          placeholder="Your name" 
+                          {...field} 
+                          className="bg-white/5 border-white/10 focus:border-primary/50 h-12" 
+                          disabled={contactMutation.isPending}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -116,7 +152,12 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="your@email.com" {...field} className="bg-white/5 border-white/10 focus:border-primary/50 h-12" />
+                        <Input 
+                          placeholder="your@email.com" 
+                          {...field} 
+                          className="bg-white/5 border-white/10 focus:border-primary/50 h-12" 
+                          disabled={contactMutation.isPending}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -134,6 +175,7 @@ export function Contact() {
                           placeholder="Tell me about your project..." 
                           className="min-h-[150px] bg-white/5 border-white/10 focus:border-primary/50 resize-none" 
                           {...field} 
+                          disabled={contactMutation.isPending}
                         />
                       </FormControl>
                       <FormMessage />
@@ -141,8 +183,12 @@ export function Contact() {
                   )}
                 />
                 
-                <Button type="submit" className="w-full h-12 text-lg font-medium bg-primary hover:bg-primary/90 text-white rounded-xl">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full h-12 text-lg font-medium bg-primary hover:bg-primary/90 text-white rounded-xl"
+                  disabled={contactMutation.isPending}
+                >
+                  {contactMutation.isPending ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Form>
