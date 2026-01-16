@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Code, Palette, Smartphone } from "lucide-react";
+import { ArrowDown, Code, Linkedin, Palette, Smartphone } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_dark_neon_fluid_glassmorphism_background.png";
 
 export function Hero() {
@@ -63,10 +63,13 @@ export function Hero() {
               View Work
             </a>
             <a
-              href="#contact"
-              className="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white rounded-full font-medium text-lg hover:bg-white/10 transition-all hover:scale-105"
+              href="https://www.linkedin.com/in/moe-barbar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-8 py-4 bg-[#0077B5] text-white rounded-full font-medium text-lg hover:bg-[#006097] transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,119,181,0.3)]"
             >
-              Contact Me
+              <Linkedin size={20} />
+              LinkedIn
             </a>
           </motion.div>
         </div>
