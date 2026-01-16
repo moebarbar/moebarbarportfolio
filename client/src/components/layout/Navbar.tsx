@@ -50,15 +50,6 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a
-            href="https://www.linkedin.com/in/moe-barbar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="LinkedIn Profile"
-          >
-            <Linkedin size={20} />
-          </a>
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -71,11 +62,13 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}
-            className="px-6 py-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 rounded-full transition-all text-sm font-medium"
+            href="https://www.linkedin.com/in/moe-barbar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2 bg-[#0077B5]/10 hover:bg-[#0077B5]/20 text-[#0077B5] border border-[#0077B5]/50 rounded-full transition-all text-sm font-medium"
           >
-            Let's Talk
+            <Linkedin size={16} />
+            LinkedIn
           </a>
         </div>
 

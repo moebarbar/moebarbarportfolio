@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
@@ -92,7 +92,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Email</h4>
-                  <a href="mailto:hello@moe.barbar" className="text-muted-foreground hover:text-primary transition-colors">hello@moe.barbar</a>
+                  <a href="mailto:moebarbar@hotmail.com" className="text-muted-foreground hover:text-primary transition-colors">moebarbar@hotmail.com</a>
                 </div>
               </div>
               
@@ -102,17 +102,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Location</h4>
-                  <p className="text-muted-foreground">San Francisco, CA (Open to Remote)</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-white/5 text-primary">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium mb-1">Phone</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">Houston, TX (Open to Remote)</p>
                 </div>
               </div>
             </div>
