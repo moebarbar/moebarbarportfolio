@@ -22,7 +22,7 @@ export function About() {
                <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent opacity-30 blur-2xl rounded-[30px] group-hover:opacity-50 transition-opacity duration-500" />
                
                {/* Main Frame */}
-               <div className="relative h-[500px] w-full rounded-[30px] overflow-hidden border border-white/10 bg-black/40 backdrop-blur-md">
+               <div className="relative h-[350px] sm:h-[400px] md:h-[500px] w-full rounded-[20px] sm:rounded-[30px] overflow-hidden border border-white/10 bg-black/40 backdrop-blur-md">
                   
                   {/* Grid Pattern Overlay */}
                   <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-10 mix-blend-overlay pointer-events-none" />
@@ -46,18 +46,18 @@ export function About() {
                   </div>
 
                   {/* Text Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20 transform transition-transform duration-500 group-hover:-translate-y-2">
-                     <div className="inline-block px-3 py-1 mb-3 text-xs font-mono text-primary bg-primary/10 border border-primary/20 rounded-full">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-20 transform transition-transform duration-500 group-hover:-translate-y-2">
+                     <div className="inline-block px-2 sm:px-3 py-1 mb-2 sm:mb-3 text-xs font-mono text-primary bg-primary/10 border border-primary/20 rounded-full">
                         System.Identity
                      </div>
-                     <h3 className="text-3xl font-syne font-bold text-white mb-2">Moe Barbar</h3>
-                     <p className="text-zinc-400">Frontend Engineer</p>
+                     <h3 className="text-xl sm:text-2xl md:text-3xl font-syne font-bold text-white mb-1 sm:mb-2">Moe Barbar</h3>
+                     <p className="text-zinc-400 text-sm sm:text-base">Frontend Engineer</p>
                   </div>
                </div>
 
                {/* Decorative Elements */}
-               <div className="absolute -top-6 -right-6 w-24 h-24 border-t-2 border-r-2 border-primary/30 rounded-tr-3xl" />
-               <div className="absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-accent/30 rounded-bl-3xl" />
+               <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-24 sm:h-24 border-t-2 border-r-2 border-primary/30 rounded-tr-2xl sm:rounded-tr-3xl" />
+               <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 border-b-2 border-l-2 border-accent/30 rounded-bl-2xl sm:rounded-bl-3xl" />
             </div>
           </motion.div>
 
@@ -67,43 +67,43 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-             <h2 className="text-4xl md:text-5xl font-bold font-syne mb-8 leading-[1.2]">
+             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-6 sm:mb-8 leading-[1.2]">
               Elevating the <br />
               <span className="text-gradient-primary">User Experience.</span>
             </h2>
             
-            <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
+            <p className="text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg">
                I am a Frontend-focused Full-Stack Web Developer with a passion for building beautiful, responsive, and high-performance web applications. My main strength is crafting polished user interfaces that delight users.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-primary/20">
-                  <Palette className="w-6 h-6 text-primary" />
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-start gap-3 sm:gap-4 group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-primary/20">
+                  <Palette className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2 font-syne">UI/UX Obsessed</h4>
-                  <p className="text-muted-foreground">I don't just implement designs; I enhance them. I focus on spacing, typography, and visual hierarchy to create premium experiences.</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-syne">UI/UX Obsessed</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">I don't just implement designs; I enhance them. I focus on spacing, typography, and visual hierarchy to create premium experiences.</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-accent/20">
-                  <Zap className="w-6 h-6 text-accent" />
+              <div className="flex items-start gap-3 sm:gap-4 group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-accent/20">
+                  <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Performance First</h4>
-                  <p className="text-muted-foreground">Smooth 60fps animations and instant load times. I optimize bundles, assets, and rendering for peak performance.</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-syne">Performance First</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">Smooth 60fps animations and instant load times. I optimize bundles, assets, and rendering for peak performance.</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-purple-500/20">
-                  <Layers className="w-6 h-6 text-purple-400" />
+              <div className="flex items-start gap-3 sm:gap-4 group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 mt-1 transition-colors group-hover:bg-purple-500/20">
+                  <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2 font-syne">Full-Stack Context</h4>
-                  <p className="text-muted-foreground">I understand the backend, which makes me a better frontend developer. I can connect APIs and handle data efficiently.</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-syne">Full-Stack Context</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">I understand the backend, which makes me a better frontend developer. I can connect APIs and handle data efficiently.</p>
                 </div>
               </div>
             </div>

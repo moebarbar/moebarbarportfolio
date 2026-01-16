@@ -44,7 +44,7 @@ export function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">Selected Work</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-3 sm:mb-4">Selected Work</h2>
             <p className="text-muted-foreground max-w-xl">
               Showcasing my ability to solve complex UI challenges and deliver polished, user-centric experiences.
             </p>
@@ -70,11 +70,11 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-card/30 rounded-3xl p-6 md:p-10 border border-white/5 hover:border-primary/20 transition-colors"
+              className="group relative grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center bg-card/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 border border-white/5 hover:border-primary/20 transition-colors"
             >
               {/* Image Side */}
               <div 
-                className="h-64 md:h-80 w-full rounded-2xl overflow-hidden shadow-2xl relative"
+                className="h-48 sm:h-64 md:h-80 w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl relative"
                 style={{ background: project.image }}
               >
                  <div className="absolute top-4 right-4 z-20">
@@ -97,11 +97,11 @@ export function Projects() {
 
               {/* Content Side */}
               <div>
-                <h3 className="text-3xl font-bold font-syne mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-syne mb-2 sm:mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
                   {project.tags.map(tag => (
                     <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-zinc-300">
                       {tag}

@@ -41,7 +41,7 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-syne mb-6">Technical Capabilities</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-4 sm:mb-6">Technical Capabilities</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             My expertise is centered on the frontend ecosystem, supported by solid full-stack knowledge.
           </p>
@@ -55,12 +55,12 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="p-6 rounded-2xl bg-card border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1 group"
+              className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1 group"
             >
-              <div className="mb-4 p-3 rounded-xl bg-white/5 w-fit group-hover:bg-primary/10 transition-colors">
+              <div className="mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 w-fit group-hover:bg-primary/10 transition-colors">
                 {group.icon}
               </div>
-              <h3 className="text-xl font-bold font-syne mb-4">{group.category}</h3>
+              <h3 className="text-lg sm:text-xl font-bold font-syne mb-3 sm:mb-4">{group.category}</h3>
               <ul className="space-y-3">
                 {group.items.map((skill) => (
                   <li key={skill} className="flex items-center gap-2 text-muted-foreground text-sm">

@@ -23,7 +23,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm mb-8 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm mb-6 sm:mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-muted-foreground font-medium">Available for remote product teams</span>
             </div>
@@ -33,7 +33,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold font-syne leading-tight tracking-tighter mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-syne leading-tight tracking-tighter mb-4 sm:mb-6"
           >
             Frontend Focused.
             <br />
@@ -44,7 +44,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 font-light leading-relaxed px-2"
           >
             I craft clean, high-performance user interfaces with excellent UX and smooth interactions. 
             Frontend-focused full-stack developer specializing in React, modern animations, and responsive design.
@@ -58,7 +58,7 @@ export function Hero() {
           >
             <a
               href="#projects"
-              className="px-8 py-4 bg-primary text-white rounded-full font-medium text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_0_20px_rgba(124,58,237,0.3)]"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-full font-medium text-base sm:text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_0_20px_rgba(124,58,237,0.3)] text-center"
             >
               View Work
             </a>
@@ -66,7 +66,7 @@ export function Hero() {
               href="https://www.linkedin.com/in/moe-barbar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-4 bg-[#0077B5] text-white rounded-full font-medium text-lg hover:bg-[#006097] transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,119,181,0.3)]"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#0077B5] text-white rounded-full font-medium text-base sm:text-lg hover:bg-[#006097] transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,119,181,0.3)]"
             >
               <Linkedin size={20} />
               LinkedIn

@@ -25,7 +25,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <main className="pt-32 pb-24">
+        <main className="pt-24 sm:pt-32 pb-16 sm:pb-24">
           <div className="container px-6 mx-auto max-w-4xl">
             <div className="animate-pulse">
               <div className="h-8 bg-muted rounded w-1/4 mb-4" />
@@ -48,7 +48,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <main className="pt-32 pb-24">
+        <main className="pt-24 sm:pt-32 pb-16 sm:pb-24">
           <div className="container px-6 mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold font-syne mb-4">Post Not Found</h1>
             <p className="text-muted-foreground mb-8">The article you're looking for doesn't exist.</p>
@@ -66,7 +66,7 @@ export default function BlogPost() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       
-      <main className="pt-32 pb-24">
+      <main className="pt-24 sm:pt-32 pb-16 sm:pb-24">
         <article className="container px-6 mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function BlogPost() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold font-syne mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-4 sm:mb-6 leading-tight">
               {post.title}
             </h1>
 
@@ -106,7 +106,7 @@ export default function BlogPost() {
               ))}
             </div>
 
-            <div className="aspect-video rounded-2xl overflow-hidden mb-12">
+            <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden mb-8 sm:mb-12">
               <img
                 src={post.coverImage}
                 alt={post.title}

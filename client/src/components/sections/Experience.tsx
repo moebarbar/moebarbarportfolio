@@ -34,7 +34,7 @@ export function Experience() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold font-syne mb-4">Professional Journey</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-syne mb-3 sm:mb-4">Professional Journey</h2>
           <p className="text-muted-foreground">My path to becoming a UI/UX specialist.</p>
         </motion.div>
 
@@ -61,13 +61,13 @@ export function Experience() {
                    {/* Mobile Dot */}
                    <div className="w-3 h-3 rounded-full bg-primary mb-2 md:hidden" />
                    
-                   <div className={`bg-card p-6 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors ${
+                   <div className={`bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/5 hover:border-primary/20 transition-colors ${
                      index % 2 === 0 ? "md:text-left" : "md:text-right"
                    }`}>
-                     <span className="text-sm text-primary font-mono mb-2 block">{exp.period}</span>
-                     <h3 className="text-xl font-bold font-syne text-white">{exp.role}</h3>
-                     <h4 className="text-muted-foreground font-medium mb-4">{exp.company}</h4>
-                     <p className="text-sm text-zinc-400 leading-relaxed">
+                     <span className="text-xs sm:text-sm text-primary font-mono mb-1 sm:mb-2 block">{exp.period}</span>
+                     <h3 className="text-lg sm:text-xl font-bold font-syne text-white">{exp.role}</h3>
+                     <h4 className="text-muted-foreground font-medium mb-3 sm:mb-4 text-sm sm:text-base">{exp.company}</h4>
+                     <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                        {exp.description}
                      </p>
                    </div>

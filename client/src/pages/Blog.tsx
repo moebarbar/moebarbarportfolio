@@ -21,17 +21,17 @@ export default function Blog() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       
-      <main className="pt-32 pb-24">
+      <main className="pt-24 sm:pt-32 pb-16 sm:pb-24">
         <div className="container px-6 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold font-syne mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-syne mb-4 sm:mb-6">
               Blog
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-2">
               Thoughts on frontend development, UI/UX, and building better web experiences.
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ export default function Blog() {
                       </span>
                     </div>
                     
-                    <h2 className="text-xl font-bold font-syne mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    <h2 className="text-lg sm:text-xl font-bold font-syne mb-2 group-hover:text-primary transition-colors line-clamp-2">
                       {post.title}
                     </h2>
                     

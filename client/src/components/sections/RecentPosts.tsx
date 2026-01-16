@@ -24,7 +24,7 @@ export function RecentPosts() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">Latest Articles</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-3 sm:mb-4">Latest Articles</h2>
             <p className="text-muted-foreground max-w-xl">
               Insights and lessons from my journey as a frontend developer.
             </p>

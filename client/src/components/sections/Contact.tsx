@@ -80,29 +80,29 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-syne mb-6">Let's Work Together</h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-md">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-4 sm:mb-6">Let's Work Together</h2>
+            <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 max-w-md">
               Have a project in mind or just want to say hi? I'm always open to discussing new opportunities and ideas.
             </p>
             
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-white/5 text-primary">
-                  <Mail size={24} />
+            <div className="space-y-6 sm:space-y-8">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 rounded-full bg-white/5 text-primary">
+                  <Mail size={20} className="sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Email</h4>
-                  <a href="mailto:moebarbar@hotmail.com" className="text-muted-foreground hover:text-primary transition-colors">moebarbar@hotmail.com</a>
+                  <h4 className="text-white font-medium mb-1 text-sm sm:text-base">Email</h4>
+                  <a href="mailto:moebarbar@hotmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base break-all">moebarbar@hotmail.com</a>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-white/5 text-primary">
-                  <MapPin size={24} />
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 rounded-full bg-white/5 text-primary">
+                  <MapPin size={20} className="sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Location</h4>
-                  <p className="text-muted-foreground">Houston, TX (Open to Remote)</p>
+                  <h4 className="text-white font-medium mb-1 text-sm sm:text-base">Location</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">Houston, TX (Open to Remote)</p>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+            className="bg-card/50 backdrop-blur-sm p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10"
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
