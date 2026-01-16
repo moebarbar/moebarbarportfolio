@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,12 +8,14 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Work", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Blog", href: "/blog", isRoute: true },
   { name: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +27,20 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
+    if (location !== "/") {
+      window.location.href = "/" + href;
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (link: { name: string; href: string; isRoute?: boolean }) => {
+    setIsOpen(false);
+    if (link.isRoute) {
+      return;
     }
   };
 
@@ -40,26 +53,29 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="text-2xl font-bold font-syne tracking-tighter hover:text-primary transition-colors"
-        >
+        <Link href="/" className="text-2xl font-bold font-syne tracking-tighter hover:text-primary transition-colors">
           MOE <span className="text-primary">BARBAR</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
-              className="text-sm font-medium hover:text-primary transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-            </a>
+            link.isRoute ? (
+              <Link key={link.name} href={link.href} className="text-sm font-medium hover:text-primary transition-colors relative group">
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
+                className="text-sm font-medium hover:text-primary transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+              </a>
+            )
           ))}
           <a
             href="https://www.linkedin.com/in/moe-barbar/"
@@ -92,14 +108,20 @@ export function Navbar() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-8 pb-20">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
-                  className="text-2xl font-syne font-bold hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </a>
+                link.isRoute ? (
+                  <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-2xl font-syne font-bold hover:text-primary transition-colors">
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
+                    className="text-2xl font-syne font-bold hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
               
               <div className="flex gap-6 mt-8">

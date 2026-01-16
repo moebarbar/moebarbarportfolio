@@ -3,11 +3,26 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { blogPostsData } from "./blogSeed";
+
+async function seedBlogPosts() {
+  const count = await storage.getBlogPostsCount();
+  if (count === 0) {
+    console.log("Seeding blog posts...");
+    for (const post of blogPostsData) {
+      await storage.createBlogPost(post);
+    }
+    console.log("Blog posts seeded successfully!");
+  }
+}
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  
+  // Seed blog posts on startup
+  await seedBlogPosts();
   
   app.post("/api/contact", async (req, res) => {
     try {
@@ -44,6 +59,41 @@ export async function registerRoutes(
       res.status(500).json({ 
         success: false, 
         message: "Failed to fetch messages" 
+      });
+    }
+  });
+
+  // Blog routes
+  app.get("/api/blog", async (req, res) => {
+    try {
+      const limit = req.query.limit ? parseInt(req.query.limit as string) : undefined;
+      const posts = await storage.getBlogPosts(limit);
+      res.json({ success: true, data: posts });
+    } catch (error) {
+      console.error("Error fetching blog posts:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch blog posts" 
+      });
+    }
+  });
+
+  app.get("/api/blog/:slug", async (req, res) => {
+    try {
+      const post = await storage.getBlogPostBySlug(req.params.slug);
+      if (!post) {
+        res.status(404).json({ 
+          success: false, 
+          message: "Blog post not found" 
+        });
+        return;
+      }
+      res.json({ success: true, data: post });
+    } catch (error) {
+      console.error("Error fetching blog post:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch blog post" 
       });
     }
   });
