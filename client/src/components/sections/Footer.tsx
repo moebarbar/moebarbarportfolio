@@ -1,0 +1,31 @@
+import { Github, Linkedin, Twitter } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="py-12 bg-black border-t border-white/10">
+      <div className="container px-6 mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-bold font-syne text-white mb-2">ALEX.DEV</h3>
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Alex Dev. All rights reserved.
+            </p>
+          </div>
+
+          <div className="flex gap-6">
+            <a href="#" className="text-muted-foreground hover:text-white transition-colors">
+              <Github size={20} />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-white transition-colors">
+              <Linkedin size={20} />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-white transition-colors">
+              <Twitter size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
