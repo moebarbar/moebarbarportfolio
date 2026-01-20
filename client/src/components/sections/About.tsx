@@ -29,21 +29,24 @@ export function About() {
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] z-10 pointer-events-none" />
 
                   {/* Primary Image (Masked) */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
-                    style={{ backgroundImage: `url(${portrait1})` }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                  </div>
+                  <img 
+                    src={portrait1}
+                    alt="Moe Barbar"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
 
                   {/* Secondary Image (Reveal on Hover) */}
-                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-all duration-700 scale-105 group-hover:scale-100 group-hover:opacity-100"
-                    style={{ backgroundImage: `url(${portraitWorking})` }}
-                  >
-                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                     <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
-                  </div>
+                  <img 
+                    src={portraitWorking}
+                    alt="Moe Barbar working"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-700 scale-105 group-hover:scale-100 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none group-hover:bg-primary/20 group-hover:mix-blend-overlay" />
 
                   {/* Text Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-20 transform transition-transform duration-500 group-hover:-translate-y-2">

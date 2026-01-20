@@ -63,10 +63,12 @@ function TypeWriter({ text, onComplete }: { text: string; onComplete?: () => voi
 
   useEffect(() => {
     if (currentIndex < text.length) {
+      const charsPerFrame = 3;
       const timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + text[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, 15);
+        const nextIndex = Math.min(currentIndex + charsPerFrame, text.length);
+        setDisplayText(text.slice(0, nextIndex));
+        setCurrentIndex(nextIndex);
+      }, 25);
       return () => clearTimeout(timeout);
     } else if (onComplete) {
       onComplete();

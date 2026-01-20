@@ -110,6 +110,8 @@ export default function BlogPost() {
               <img
                 src={post.coverImage}
                 alt={post.title}
+                loading="eager"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
