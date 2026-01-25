@@ -23,22 +23,10 @@ import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
  */
 const projects = [
   {
-    title: "Neon Analytics Dashboard",
-    description: "A visually stunning, high-performance analytics dashboard with complex data visualization and dark mode aesthetics.",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Framer Motion"],
-    liveUrl: "https://example.com"
-  },
-  {
-    title: "Visual Workflow Builder",
-    description: "An interactive drag-and-drop interface for building automation flows with smooth canvas interactions.",
-    techStack: ["React", "React Flow", "Zustand", "Dnd-Kit", "Tailwind"],
-    liveUrl: "https://example.com"
-  },
-  {
-    title: "Lumina Landing Page",
-    description: "A premium SaaS landing page with scroll-driven animations, parallax effects, and glassmorphism UI.",
-    techStack: ["Next.js", "GSAP", "Tailwind", "Radix UI"],
-    liveUrl: "https://example.com"
+    title: "SaaS Landing Page",
+    description: "A premium SaaS landing page with modern design, smooth animations, and conversion-focused UI elements.",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://saa-s-landing-page--moebarbar.replit.app"
   }
 ];
 // ============================================================================
