@@ -1,38 +1,158 @@
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight, LayoutTemplate } from "lucide-react";
+import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
 
+/**
+ * ============================================================================
+ * PROJECT DATA - ADD YOUR PROJECTS HERE
+ * ============================================================================
+ * 
+ * To add a new project, simply add a new object to the array below with:
+ * - title: Project name
+ * - description: Short description (1-2 lines)
+ * - techStack: Array of technologies used
+ * - liveUrl: URL to the live site (will be embedded in iframe)
+ * 
+ * Example:
+ * {
+ *   title: "My New Project",
+ *   description: "A brief description of what this project does.",
+ *   techStack: ["React", "TypeScript", "Tailwind"],
+ *   liveUrl: "https://my-project.com"
+ * }
+ */
 const projects = [
   {
-    id: 1,
     title: "Neon Analytics Dashboard",
-    description: "A visually stunning, high-performance analytics dashboard. Focused on complex data visualization using Recharts, dark mode aesthetics, and a responsive grid layout that adapts perfectly to any device.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Framer Motion"],
-    image: "linear-gradient(to bottom right, #2E1065, #000000)", 
-    link: "#",
-    github: "#",
-    badge: "UI / UX Focused"
+    description: "A visually stunning, high-performance analytics dashboard with complex data visualization and dark mode aesthetics.",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Framer Motion"],
+    liveUrl: "https://example.com"
   },
   {
-    id: 2,
     title: "Visual Workflow Builder",
-    description: "An interactive drag-and-drop interface for building automation flows. Demonstrates complex state management, custom node rendering, and smooth canvas interactions using React Flow.",
-    tags: ["React", "React Flow", "Zustand", "Dnd-Kit", "Tailwind"],
-    image: "linear-gradient(to bottom right, #831843, #2a0a18)",
-    link: "#",
-    github: "#",
-    badge: "Interactive UI"
+    description: "An interactive drag-and-drop interface for building automation flows with smooth canvas interactions.",
+    techStack: ["React", "React Flow", "Zustand", "Dnd-Kit", "Tailwind"],
+    liveUrl: "https://example.com"
   },
   {
-    id: 3,
     title: "Lumina Landing Page",
-    description: "A premium landing page for a SaaS product featuring scroll-driven animations, parallax effects, and glassmorphism UI elements. Optimized for Core Web Vitals and accessibility.",
-    tags: ["Next.js", "GSAP", "Tailwind", "Radix UI"],
-    image: "linear-gradient(to bottom right, #042f2e, #020617)",
-    link: "#",
-    github: "#",
-    badge: "Motion Design"
+    description: "A premium SaaS landing page with scroll-driven animations, parallax effects, and glassmorphism UI.",
+    techStack: ["Next.js", "GSAP", "Tailwind", "Radix UI"],
+    liveUrl: "https://example.com"
   }
 ];
+// ============================================================================
+
+interface ProjectPreviewProps {
+  url: string;
+  title: string;
+}
+
+function ProjectPreview({ url, title }: ProjectPreviewProps) {
+  const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading");
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isInView) return;
+    
+    const timer = setTimeout(() => {
+      if (status === "loading") {
+        setStatus("error");
+      }
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, [isInView, status]);
+
+  const handleLoad = () => {
+    setStatus("loaded");
+  };
+
+  const handleError = () => {
+    setStatus("error");
+  };
+
+  return (
+    <div 
+      ref={containerRef}
+      className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-black/40 border border-white/10"
+    >
+      {isInView && (
+        <>
+          {status === "loading" && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 z-10">
+              <Loader2 className="w-8 h-8 text-primary animate-spin mb-3" />
+              <span className="text-sm text-muted-foreground">Loading preview...</span>
+            </div>
+          )}
+
+          {status === "error" && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 z-10 p-6 text-center">
+              <AlertCircle className="w-10 h-10 text-amber-500 mb-3" />
+              <p className="text-white font-medium mb-2">Preview Unavailable</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                This site doesn't allow embedding. Click below to view it directly.
+              </p>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+              >
+                <ExternalLink size={16} />
+                Open Live Site
+              </a>
+            </div>
+          )}
+
+          <iframe
+            src={url}
+            title={`Preview of ${title}`}
+            className={`w-full h-full border-0 transition-opacity duration-500 ${
+              status === "loaded" ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={handleLoad}
+            onError={handleError}
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+            loading="lazy"
+          />
+
+          {status === "loaded" && (
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-black/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+          )}
+        </>
+      )}
+
+      {!isInView && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function Projects() {
   return (
@@ -53,6 +173,7 @@ export function Projects() {
           <motion.a 
             href="https://github.com" 
             target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -62,61 +183,65 @@ export function Projects() {
           </motion.a>
         </div>
 
-        <div className="grid grid-cols-1 gap-12">
+        <div className="space-y-16">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1 }}
-              className="group relative grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center bg-card/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 border border-white/5 hover:border-primary/20 transition-colors"
+              className="group"
+              data-testid={`project-${index}`}
             >
-              {/* Image Side */}
-              <div 
-                className="h-48 sm:h-64 md:h-80 w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl relative"
-                style={{ background: project.image }}
-              >
-                 <div className="absolute top-4 right-4 z-20">
-                    <span className="flex items-center gap-1.5 px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-medium border border-white/10 text-white">
-                        <LayoutTemplate className="w-3 h-3 text-accent" />
-                        {project.badge}
-                    </span>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                {/* Preview Side */}
+                <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <ProjectPreview url={project.liveUrl} title={project.title} />
                 </div>
 
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 bg-black/40 backdrop-blur-sm">
-                  <a href={project.link} className="p-3 bg-white text-black rounded-full hover:scale-110 transition-transform">
-                    <ExternalLink size={20} />
-                  </a>
-                  <a href={project.github} className="p-3 bg-black text-white rounded-full hover:scale-110 transition-transform border border-white/20">
-                    <Github size={20} />
-                  </a>
+                {/* Content Side */}
+                <div className={`flex flex-col justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-syne mb-3 sm:mb-4 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed text-base sm:text-lg">
+                    {project.description}
+                  </p>
+                  
+                  {/* Tech Stack Tags */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.techStack.map(tech => (
+                      <span 
+                        key={tech} 
+                        className="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:border-primary/30 hover:text-primary transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Button */}
+                  <div>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary border border-primary/30 rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                      data-testid={`project-link-${index}`}
+                    >
+                      <ExternalLink size={18} />
+                      Open Live Site
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              {/* Content Side */}
-              <div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-syne mb-2 sm:mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-zinc-300">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-6 md:hidden">
-                   <a href={project.link} className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
-                    <ExternalLink size={16} /> Live Demo
-                  </a>
-                  <a href={project.github} className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
-                    <Github size={16} /> Source Code
-                  </a>
-                </div>
-              </div>
+              {/* Divider */}
+              {index < projects.length - 1 && (
+                <div className="mt-16 border-t border-white/5" />
+              )}
             </motion.div>
           ))}
         </div>
