@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
@@ -22,6 +22,9 @@ export function Footer() {
             </a>
             <a href="https://instagram.com/immoebar" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors p-2">
               <Instagram size={20} />
+            </a>
+            <a href="https://wa.me/13474819096" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-green-500 transition-colors p-2">
+              <MessageCircle size={20} />
             </a>
           </div>
         </div>

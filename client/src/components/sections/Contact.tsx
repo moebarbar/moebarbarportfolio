@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
@@ -96,6 +96,16 @@ export function Contact() {
                 </div>
               </div>
               
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 rounded-full bg-white/5 text-green-500">
+                  <MessageCircle size={20} className="sm:w-6 sm:h-6" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-1 text-sm sm:text-base">WhatsApp</h4>
+                  <a href="https://wa.me/13474819096" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-green-500 transition-colors text-sm sm:text-base">Message me directly</a>
+                </div>
+              </div>
+
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 rounded-full bg-white/5 text-primary">
                   <MapPin size={20} className="sm:w-6 sm:h-6" />
