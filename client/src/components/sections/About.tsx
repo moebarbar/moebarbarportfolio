@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layers, Palette, Zap } from "lucide-react";
-import portrait1 from "@assets/IMG_8295_1769822319191.jpg";
+import portrait1 from "@assets/IMG_8295_copy_1769822586012.jpg";
 import portraitWorking from "@assets/IMG_8230_1768523511496.JPG";
 
 export function About() {
@@ -34,7 +34,7 @@ export function About() {
                     alt="Moe Barbar"
                     loading="eager"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover object-[center_15%] opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
 
