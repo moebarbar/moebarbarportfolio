@@ -34,7 +34,7 @@ export function About() {
                     alt="Moe Barbar"
                     loading="eager"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover object-top opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-cover object-[center_25%] opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
 
