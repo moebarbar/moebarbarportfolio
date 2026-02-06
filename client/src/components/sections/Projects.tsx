@@ -23,6 +23,12 @@ import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
  */
 const projects = [
   {
+    title: "Postphoria",
+    description: "A full-featured social media management platform with AI-powered content generation, bulk scheduling, RSS auto-posting, and smart analytics.",
+    techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui", "Express", "PostgreSQL", "Drizzle"],
+    liveUrl: "https://postphoria.com"
+  },
+  {
     title: "SaaS Landing Page",
     description: "A premium SaaS landing page with modern design, smooth animations, and conversion-focused UI elements.",
     techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui", "Express", "PostgreSQL", "Drizzle"],
