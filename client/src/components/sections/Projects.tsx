@@ -29,7 +29,7 @@ const projects = [
     liveUrl: "https://postphoria.com"
   },
   {
-    title: "SaaS Landing Page",
+    title: "Analyio",
     description: "A premium SaaS landing page with modern design, smooth animations, and conversion-focused UI elements.",
     techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui", "Express", "PostgreSQL", "Drizzle"],
     liveUrl: "https://saa-s-landing-page--moebarbar.replit.app"
