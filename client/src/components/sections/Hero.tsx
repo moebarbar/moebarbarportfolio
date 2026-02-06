@@ -4,12 +4,13 @@ import heroBg from "@assets/generated_images/abstract_dark_neon_fluid_glassmorph
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section aria-label="Hero introduction" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={heroBg} 
-          alt="Abstract Background" 
+          alt="" 
+          aria-hidden="true"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/80 to-background" />

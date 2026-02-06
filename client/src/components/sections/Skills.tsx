@@ -33,7 +33,7 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-muted/30">
+    <section id="skills" aria-label="Technical skills and capabilities" className="py-24 bg-muted/30">
       <div className="container px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

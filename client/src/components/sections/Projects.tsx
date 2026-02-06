@@ -150,7 +150,7 @@ function ProjectPreview({ url, title }: ProjectPreviewProps) {
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 bg-background">
+    <section id="projects" aria-label="Featured projects" className="py-24 bg-background">
       <div className="container px-6 mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <motion.div

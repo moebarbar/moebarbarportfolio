@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
+import { updateMetaTags, resetMetaTags } from "@/lib/seo";
 import type { BlogPost as BlogPostType } from "@shared/schema";
 
 export default function BlogPost() {
@@ -20,6 +22,24 @@ export default function BlogPost() {
   });
 
   const post = data?.data;
+
+  useEffect(() => {
+    if (post) {
+      updateMetaTags({
+        title: `${post.title} | Moe Barbar Blog`,
+        description: post.excerpt,
+        url: `${window.location.origin}/blog/${post.slug}`,
+        image: post.coverImage,
+        type: "article",
+        article: {
+          publishedTime: new Date(post.publishedAt).toISOString(),
+          tags: post.tags,
+          author: "Moe Barbar",
+        },
+      });
+    }
+    return () => resetMetaTags();
+  }, [post]);
 
   if (isLoading) {
     return (

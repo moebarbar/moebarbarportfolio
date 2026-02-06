@@ -26,7 +26,7 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 bg-muted/20">
+    <section id="experience" aria-label="Professional experience" className="py-24 bg-muted/20">
       <div className="container px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

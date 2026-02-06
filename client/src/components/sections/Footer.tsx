@@ -13,20 +13,20 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-4 sm:gap-6">
-            <a href="#" className="text-muted-foreground hover:text-white transition-colors p-2">
-              <Github size={20} />
+          <nav aria-label="Social media links" className="flex gap-4 sm:gap-6">
+            <a href="#" aria-label="GitHub profile" className="text-muted-foreground hover:text-white transition-colors p-2">
+              <Github size={20} aria-hidden="true" />
             </a>
-            <a href="https://www.linkedin.com/in/moe-barbar/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors p-2">
-              <Linkedin size={20} />
+            <a href="https://www.linkedin.com/in/moe-barbar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-muted-foreground hover:text-white transition-colors p-2">
+              <Linkedin size={20} aria-hidden="true" />
             </a>
-            <a href="https://instagram.com/immoebar" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors p-2">
-              <Instagram size={20} />
+            <a href="https://instagram.com/immoebar" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" className="text-muted-foreground hover:text-white transition-colors p-2">
+              <Instagram size={20} aria-hidden="true" />
             </a>
-            <a href="https://wa.me/13474819096" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-green-500 transition-colors p-2">
-              <MessageCircle size={20} />
+            <a href="https://wa.me/13474819096" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp" className="text-muted-foreground hover:text-green-500 transition-colors p-2">
+              <MessageCircle size={20} aria-hidden="true" />
             </a>
-          </div>
+          </nav>
         </div>
         
         <div className="mt-8 pt-6 border-t border-white/5 text-center">

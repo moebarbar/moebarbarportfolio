@@ -1,12 +1,22 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
+import { updateMetaTags, resetMetaTags } from "@/lib/seo";
 import type { BlogPost } from "@shared/schema";
 
 export default function Blog() {
+  useEffect(() => {
+    updateMetaTags({
+      title: "Blog | Moe Barbar - Frontend Development Insights",
+      description: "Articles on frontend development, React, TypeScript, UI/UX design, and building better web experiences by Moe Barbar.",
+      url: `${window.location.origin}/blog`,
+    });
+    return () => resetMetaTags();
+  }, []);
   const { data, isLoading } = useQuery<{ success: boolean; data: BlogPost[] }>({
     queryKey: ["/api/blog"],
     queryFn: async () => {

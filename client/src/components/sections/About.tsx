@@ -5,7 +5,7 @@ import portraitWorking from "@assets/IMG_8230_1768523511496.JPG";
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-background relative overflow-hidden">
+    <section id="about" aria-label="About Moe Barbar" className="py-24 bg-background relative overflow-hidden">
       <div className="container px-6 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           
