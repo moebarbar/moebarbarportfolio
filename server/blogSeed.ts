@@ -5,43 +5,254 @@ export const blogPostsData: InsertBlogPost[] = [
     slug: "clean-scalable-frontend-architecture",
     title: "How I Build Clean, Scalable Frontend Architecture",
     excerpt: "A deep dive into folder structure, component reuse, and thinking in systems—not just pages. Learn the patterns that make codebases maintainable.",
-    content: `When I start a new frontend project, I don't just think about the first feature—I think about the tenth, the twentieth, and beyond. Clean architecture isn't about perfection from day one; it's about making good decisions that compound over time.
+    content: `When I start a new frontend project, I don't just think about shipping the first feature—I think about the tenth, the twentieth, and the codebase three years from now when the team has grown and the product has evolved in ways we can't yet imagine. Clean architecture isn't about achieving perfection from day one; it's about making good architectural decisions that compound over time, creating a foundation that makes future development faster, not slower.
 
-## Folder Structure That Scales
+After years of building and maintaining large-scale frontend applications, I've learned that the choices we make in those first few days of a project have an outsized impact on everything that follows. Let me walk you through the principles and patterns that have served me well.
 
-I organize my projects by feature, not by file type. Instead of having all components in one folder, all hooks in another, I group related code together:
+## The Problem With Traditional Frontend Organization
+
+Most developers start projects the same way: create a components folder, a hooks folder, maybe a utils folder. It feels logical at first. But as the project grows, you end up with:
+
+- 50+ components in a flat structure with no clear relationships
+- Hunt-and-peck development where finding related code requires searching across multiple directories
+- Unclear boundaries between different parts of your application
+- Difficulty understanding what code is actually being used where
+
+This "technical" organization breaks down precisely when you need structure most—when your application scales beyond a handful of features.
+
+## Folder Structure That Actually Scales
+
+I organize my projects by feature domain, not by technical file type. This is often called "feature-based architecture" or "vertical slicing," and it fundamentally changes how you think about code organization.
+
+Here's what this looks like in practice:
 
 \`\`\`
 src/
   features/
     auth/
       components/
+        LoginForm.tsx
+        RegistrationForm.tsx
+        PasswordReset.tsx
       hooks/
+        useAuth.ts
+        useSession.ts
       utils/
+        validation.ts
+        tokenManager.ts
+      api/
+        authApi.ts
+      types/
+        auth.types.ts
     dashboard/
       components/
+        DashboardLayout.tsx
+        StatisticsCard.tsx
+        ActivityFeed.tsx
       hooks/
+        useDashboardData.ts
+        useRealTimeUpdates.ts
       utils/
+        formatters.ts
+      api/
+        dashboardApi.ts
+    profile/
+      components/
+        ProfileEditor.tsx
+        AvatarUpload.tsx
+      hooks/
+        useProfile.ts
+      utils/
+        imageProcessing.ts
   shared/
     components/
+      Button.tsx
+      Input.tsx
+      Modal.tsx
     hooks/
+      useDebounce.ts
+      useLocalStorage.ts
     utils/
+      dateHelpers.ts
+      stringHelpers.ts
 \`\`\`
 
-This approach means when I'm working on the auth feature, everything I need is in one place. No jumping between distant folders.
+## Why This Approach Works
 
-## Component Reuse Philosophy
+**Cognitive locality:** When I'm working on authentication, everything I need—components, hooks, utilities, API calls, and types—lives in one place. I'm not context-switching between folders on opposite sides of the project.
 
-I build components in three tiers:
-1. **Primitives**: Button, Input, Card—the atomic building blocks
-2. **Composites**: SearchBar, UserCard—combinations of primitives
-3. **Features**: LoginForm, DashboardHeader—business logic components
+**Clear boundaries:** Each feature becomes a mini-application with clear boundaries. This makes it easier to understand dependencies and prevents the "spaghetti code" phenomenon where everything depends on everything else.
 
-Each tier only imports from tiers below it, never above. This creates a natural hierarchy that's easy to reason about.
+**Easier refactoring:** When requirements change (and they always do), I can modify or even remove entire features with confidence, knowing exactly what code is affected.
 
-## Thinking in Systems
+**Better collaboration:** When multiple developers work on different features, merge conflicts decrease because they're literally working in different parts of the codebase.
 
-The real secret is thinking about your UI as a system, not a collection of pages. Every component should have a single responsibility. Every hook should do one thing well. When you think this way, your codebase becomes a toolkit, not a tangled mess.`,
+**Scalability:** This structure works for 5 features or 50. The pattern remains the same, making it predictable and maintainable.
+
+## The Three-Tier Component Philosophy
+
+Not all components are created equal, and treating them as if they are leads to chaos. I organize components into three distinct tiers, each with its own purpose and constraints:
+
+**Tier 1: Primitive Components (Foundation Layer)**
+
+These are your most basic, reusable UI elements—the atoms of your design system. Examples include Button, Input, Card, Badge, Spinner, and Typography. They contain no business logic whatsoever, no API calls or state management. They're highly reusable across the entire application and focused on pure visual presentation.
+
+\`\`\`tsx
+// Example: A primitive Button component
+export const Button = ({ 
+  variant = 'primary', 
+  size = 'medium', 
+  children,
+  ...props 
+}) => {
+  return (
+    <button 
+      className={getButtonStyles(variant, size)}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+\`\`\`
+
+**Tier 2: Composite Components (Pattern Layer)**
+
+These components combine primitives into reusable patterns that appear throughout your application. Examples include FormField (label + input + error), SearchBar (input + icon + dropdown), and DataTable. They may contain presentational logic but still no direct API calls.
+
+\`\`\`tsx
+// Example: A composite FormField component
+export const FormField = ({ 
+  label, 
+  error, 
+  helperText,
+  children 
+}) => {
+  return (
+    <div className="form-field">
+      <Label>{label}</Label>
+      {children}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {helperText && <HelperText>{helperText}</HelperText>}
+    </div>
+  );
+};
+\`\`\`
+
+**Tier 3: Feature Components (Business Layer)**
+
+These are the components specific to particular features, containing business logic and state. They make API calls, manage complex state, and compose primitive and composite components. They're not typically reused outside their feature.
+
+\`\`\`tsx
+// Example: A feature component
+export const LoginForm = () => {
+  const { login, isLoading } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await login(email, password);
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <FormField label="Email" error={emailError}>
+        <Input 
+          type="email" 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </FormField>
+      <FormField label="Password" error={passwordError}>
+        <Input 
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </FormField>
+      <Button type="submit" isLoading={isLoading}>
+        Log In
+      </Button>
+    </form>
+  );
+};
+\`\`\`
+
+## The Critical Rule: Unidirectional Dependencies
+
+Here's the rule that makes this system work: Each tier only imports from tiers below it, never above.
+
+- Feature components can use composite and primitive components
+- Composite components can use primitive components
+- Primitive components use nothing but standard HTML and CSS
+
+This creates a natural hierarchy that's easy to reason about and prevents circular dependencies. When you enforce this rule, you create a stable foundation where changes at the bottom (primitives) are intentional and carefully considered, while changes at the top (features) are fast and safe.
+
+## Thinking in Systems, Not Pages
+
+The real breakthrough in frontend architecture comes when you stop thinking about your application as a collection of pages and start thinking about it as a system of components.
+
+**Single Responsibility Principle:** Every component should do one thing well. A UserCard component displays user information. It doesn't fetch that data, validate forms, or handle routing. Those are different responsibilities that belong in different places.
+
+**Composition Over Configuration:** Instead of creating components with dozens of props and flags, create smaller components that can be composed together. This makes your code more flexible and easier to test.
+
+\`\`\`tsx
+// Instead of this:
+<DataTable 
+  showFilters={true}
+  showPagination={true}
+  showExport={true}
+  customHeader={...}
+  customFooter={...}
+/>
+
+// Do this:
+<DataTableContainer>
+  <DataTableFilters />
+  <DataTable data={data} />
+  <DataTablePagination />
+  <DataTableExport />
+</DataTableContainer>
+\`\`\`
+
+**Clear Contracts:** Each component, hook, and utility should have a clear interface. What does it accept as input? What does it return? What side effects does it have? When these contracts are clear, your codebase becomes predictable.
+
+## State Management Architecture
+
+State is one of the most challenging aspects of frontend architecture. I follow these principles:
+
+**Collocate state with usage:** Keep state as close as possible to where it's used. Not everything needs to be in global state management.
+
+**Layer your state:**
+
+- **UI state:** Local to components (open/closed, hover, etc.)
+- **Server state:** Data from APIs (use React Query, SWR, or similar)
+- **Global app state:** Truly global state (user auth, theme, etc.)
+
+**Minimize global state:** The less global state you have, the easier your application is to reason about and test.
+
+## The Power of Constraints
+
+None of these architectural decisions are about limiting what you can do—they're about creating helpful constraints that guide you toward better solutions. When you have clear patterns to follow, you spend less time deciding where things should go and more time solving actual problems.
+
+## Practical Tips for Implementation
+
+1. **Start small:** You don't need to implement everything at once. Begin with the folder structure and component tiers. Add other patterns as you encounter the problems they solve.
+2. **Document your decisions:** Create an ARCHITECTURE.md file in your repository explaining these patterns and why they exist. Future you (and your teammates) will thank you.
+3. **Automate consistency:** Use ESLint rules, folder generators, and code templates to enforce your architectural decisions automatically.
+4. **Refactor incrementally:** If you're working on an existing project, don't try to restructure everything at once. Refactor one feature at a time as you work on it.
+5. **Measure the impact:** Track metrics like time-to-ship new features, bug frequency, and developer satisfaction. Good architecture should make these numbers better over time.
+
+## The Compounding Effect
+
+Here's what I've learned: good architecture compounds. Every feature built on solid foundations is easier to build than the last. Every component that follows clear patterns is easier to maintain. Every developer who joins a well-architected project becomes productive faster.
+
+Clean, scalable frontend architecture isn't about following rigid rules—it's about making thoughtful decisions that respect the fact that code is read far more often than it's written, and that the easiest code to maintain is code that's organized predictably and purposefully.
+
+When you think about your UI as a system, when you create clear boundaries between concerns, and when you build with the assumption that everything will need to change eventually—you create a codebase that grows with grace rather than collapsing under its own weight.
+
+That's the kind of architecture worth building.`,
     coverImage: "/assets/generated_images/clean_frontend_architecture_blog_cover.png",
     publishedAt: new Date("2026-02-10"),
     tags: ["Architecture", "React", "Best Practices"]
