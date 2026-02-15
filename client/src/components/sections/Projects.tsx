@@ -35,6 +35,12 @@ const projects = [
     liveUrl: "https://postphoria.com"
   },
   {
+    title: "Komorebi Coffee",
+    description: "An artisanal coffee shop website with immersive storytelling, elegant typography, and a warm atmospheric design that mirrors the in-store experience.",
+    techStack: ["React", "TypeScript", "Vite", "Tailwind", "Framer Motion"],
+    liveUrl: "https://komorebi.creatifia.com"
+  },
+  {
     title: "Analyio",
     description: "A premium SaaS landing page with modern design, smooth animations, and conversion-focused UI elements.",
     techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui", "Express", "PostgreSQL", "Drizzle"],
