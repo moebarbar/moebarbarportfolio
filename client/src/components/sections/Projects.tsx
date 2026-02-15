@@ -23,8 +23,8 @@ import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
  */
 const projects = [
   {
-    title: "Creatifia",
-    description: "A creative platform delivering innovative digital solutions with a sleek, modern interface and seamless user experience.",
+    title: "Créatifia",
+    description: "A creative agency delivering innovative digital solutions with a sleek, modern interface and seamless user experience.",
     techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui"],
     liveUrl: "https://creatifia.com"
   },
