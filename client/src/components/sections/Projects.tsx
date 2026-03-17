@@ -166,12 +166,19 @@ export function Projects() {
                 </div>
 
                 <div className={`flex flex-col justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                  <span className="text-xs font-medium text-primary/70 uppercase tracking-widest mb-2">
+                    {project.tagline}
+                  </span>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-syne mb-3 sm:mb-4 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-base sm:text-lg">
+                  <p className="text-muted-foreground mb-4 leading-relaxed text-base sm:text-lg">
                     {project.description}
+                  </p>
+
+                  <p className="text-muted-foreground/70 mb-6 leading-relaxed text-sm">
+                    {project.concept.slice(0, 120)}...
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-8">
@@ -185,7 +192,7 @@ export function Projects() {
                     ))}
                   </div>
 
-                  <div>
+                  <div className="flex items-center gap-3 flex-wrap">
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -196,6 +203,12 @@ export function Projects() {
                       <ExternalLink size={18} />
                       Open Live Site
                     </a>
+                    <Link
+                      href="/projects"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      Full Details →
+                    </Link>
                   </div>
                 </div>
               </div>
