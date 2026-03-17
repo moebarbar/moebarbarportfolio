@@ -1,59 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
+import { Link } from "wouter";
+import { projects } from "@/data/projects";
 
-/**
- * ============================================================================
- * PROJECT DATA - ADD YOUR PROJECTS HERE
- * ============================================================================
- * 
- * To add a new project, simply add a new object to the array below with:
- * - title: Project name
- * - description: Short description (1-2 lines)
- * - techStack: Array of technologies used
- * - liveUrl: URL to the live site (will be embedded in iframe)
- * 
- * Example:
- * {
- *   title: "My New Project",
- *   description: "A brief description of what this project does.",
- *   techStack: ["React", "TypeScript", "Tailwind"],
- *   liveUrl: "https://my-project.com"
- * }
- */
-const projects = [
-  {
-    title: "Créatifia",
-    description: "A creative agency delivering innovative digital solutions with a sleek, modern interface and seamless user experience.",
-    techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui"],
-    liveUrl: "https://creatifia.com"
-  },
-  {
-    title: "Postphoria",
-    description: "A full-featured social media management platform with AI-powered content generation, bulk scheduling, RSS auto-posting, and smart analytics.",
-    techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui", "Express", "PostgreSQL", "Drizzle"],
-    liveUrl: "https://postphoria.com"
-  },
-  {
-    title: "Komorebi Coffee",
-    description: "An artisanal coffee shop website with immersive storytelling, elegant typography, and a warm atmospheric design that mirrors the in-store experience.",
-    techStack: ["React", "TypeScript", "Vite", "Tailwind", "Framer Motion"],
-    liveUrl: "https://komorebi.creatifia.com"
-  },
-  {
-    title: "Analyio",
-    description: "A premium SaaS landing page with modern design, smooth animations, and conversion-focused UI elements.",
-    techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui", "Express", "PostgreSQL", "Drizzle"],
-    liveUrl: "https://analyio.com"
-  },
-  {
-    title: "SocialProofly",
-    description: "A social proof and trust-building platform designed to boost conversions with real-time notifications and engagement widgets.",
-    techStack: ["React", "TypeScript", "Vite", "Tailwind", "shadcn/ui"],
-    liveUrl: "https://socialproofly.com"
-  }
-];
-// ============================================================================
+const homeProjects = projects.slice(0, 3);
 
 interface ProjectPreviewProps {
   url: string;
@@ -166,6 +117,8 @@ function ProjectPreview({ url, title }: ProjectPreviewProps) {
   );
 }
 
+export { ProjectPreview };
+
 export function Projects() {
   return (
     <section id="projects" aria-label="Featured projects" className="py-24 bg-background">
@@ -182,21 +135,22 @@ export function Projects() {
             </p>
           </motion.div>
           
-          <motion.a 
-            href="https://github.com" 
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors group"
           >
-            View GitHub Profile <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.a>
+            <Link
+              href="/projects"
+              className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors group"
+            >
+              View All Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
 
         <div className="space-y-16">
-          {projects.map((project, index) => (
+          {homeProjects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
@@ -207,12 +161,10 @@ export function Projects() {
               data-testid={`project-${index}`}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                {/* Preview Side */}
                 <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
                   <ProjectPreview url={project.liveUrl} title={project.title} />
                 </div>
 
-                {/* Content Side */}
                 <div className={`flex flex-col justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-syne mb-3 sm:mb-4 group-hover:text-primary transition-colors">
                     {project.title}
@@ -222,7 +174,6 @@ export function Projects() {
                     {project.description}
                   </p>
                   
-                  {/* Tech Stack Tags */}
                   <div className="flex flex-wrap gap-2 mb-8">
                     {project.techStack.map(tech => (
                       <span 
@@ -234,7 +185,6 @@ export function Projects() {
                     ))}
                   </div>
 
-                  {/* Action Button */}
                   <div>
                     <a
                       href={project.liveUrl}
@@ -250,13 +200,31 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Divider */}
-              {index < projects.length - 1 && (
+              {index < homeProjects.length - 1 && (
                 <div className="mt-16 border-t border-white/5" />
               )}
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary/10 text-primary border border-primary/30 rounded-full font-semibold text-lg hover:bg-primary hover:text-white transition-all duration-300 group"
+            data-testid="view-all-projects"
+          >
+            View All Projects
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <p className="text-muted-foreground text-sm mt-3">
+            {projects.length} projects across {projects.length > 3 ? "multiple" : "various"} categories
+          </p>
+        </motion.div>
       </div>
     </section>
   );
