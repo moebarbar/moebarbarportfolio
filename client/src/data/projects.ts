@@ -18,6 +18,7 @@ export const categories = [
   { id: "food-drink", label: "Food & Drink" },
   { id: "social", label: "Social Media" },
   { id: "travel", label: "Travel" },
+  { id: "local-business", label: "Local Business" },
 ];
 
 export const projects: Project[] = [
@@ -144,6 +145,24 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://jordan-production.up.railway.app",
     category: "travel",
+    year: "2025",
+  },
+  {
+    title: "Co-Working Space",
+    tagline: "Where great work happens together",
+    description: "A modern co-working space website designed to attract freelancers, remote teams, and entrepreneurs with a clean, professional, and welcoming digital presence.",
+    concept: "The co-working industry thrives on community and flexibility — this website was built to communicate exactly that. It presents the space's amenities, membership plans, and community culture in a way that makes visitors feel at home before they even walk through the door. Every section is designed to reduce friction and convert visitors into members.",
+    role: "Frontend Developer — Built the full marketing site including the membership plan comparison, amenities showcase, booking inquiry flow, and responsive layout optimized for local search traffic.",
+    highlights: [
+      "Membership plan comparison with clear pricing tiers",
+      "Amenities and space showcase with interactive highlights",
+      "Community-focused design that conveys warmth and productivity",
+      "Booking/inquiry CTA prominently integrated throughout",
+      "SEO-optimized for local search visibility",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://co-working-w-production.up.railway.app",
+    category: "local-business",
     year: "2025",
   },
 ];
