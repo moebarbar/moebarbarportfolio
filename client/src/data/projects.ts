@@ -17,6 +17,7 @@ export const categories = [
   { id: "business", label: "Business" },
   { id: "food-drink", label: "Food & Drink" },
   { id: "social", label: "Social Media" },
+  { id: "travel", label: "Travel" },
 ];
 
 export const projects: Project[] = [
@@ -125,6 +126,24 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     liveUrl: "https://socialproofly.com",
     category: "saas",
+    year: "2025",
+  },
+  {
+    title: "Jordan",
+    tagline: "Discover the Wonders of the Hashemite Kingdom",
+    description: "An immersive travel website dedicated to Jordan — showcasing its ancient history, breathtaking landscapes, and rich culture to inspire and guide modern travelers.",
+    concept: "Jordan is one of the world's most captivating destinations, home to Petra, Wadi Rum, the Dead Sea, and millennia of civilization. This travel website was built to capture that magic digitally — drawing visitors in with stunning visuals and storytelling, then guiding them through destinations, itineraries, and experiences that make Jordan unforgettable.",
+    role: "Frontend Developer — Designed and built the full travel website, focusing on visual impact, immersive scroll experiences, and a content structure that makes trip planning feel exciting rather than overwhelming.",
+    highlights: [
+      "Cinematic full-screen hero with landmark photography",
+      "Destination cards showcasing Petra, Wadi Rum, Dead Sea & more",
+      "Itinerary sections with day-by-day travel guides",
+      "Immersive parallax scroll effects throughout",
+      "Fully responsive for mobile travelers on the go",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://jordan-production.up.railway.app",
+    category: "travel",
     year: "2025",
   },
 ];
