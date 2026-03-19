@@ -106,12 +106,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </div>
             )}
 
-            <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
+            <div className="absolute top-4 left-4 z-20">
               <span className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-primary border border-primary/30 backdrop-blur-md">
                 {categoryLabel}
-              </span>
-              <span className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-white/10 text-white/60 border border-white/10 backdrop-blur-md">
-                {project.year}
               </span>
             </div>
           </div>

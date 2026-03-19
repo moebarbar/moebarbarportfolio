@@ -8,7 +8,6 @@ export interface Project {
   techStack: string[];
   liveUrl: string;
   category: string;
-  year: string;
 }
 
 export const categories = [
@@ -37,7 +36,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     liveUrl: "https://creatifia.com",
     category: "business",
-    year: "2025",
   },
   {
     title: "Postphoria",
@@ -55,7 +53,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Express", "PostgreSQL", "Drizzle ORM", "OpenAI API"],
     liveUrl: "https://postphoria.com",
     category: "social",
-    year: "2025",
   },
   {
     title: "Komorebi Coffee",
@@ -73,7 +70,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://komorebi.creatifia.com",
     category: "food-drink",
-    year: "2025",
   },
   {
     title: "Brew & Bloom",
@@ -91,7 +87,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://brew-and-bloom-production.up.railway.app",
     category: "food-drink",
-    year: "2025",
   },
   {
     title: "Analyio",
@@ -109,7 +104,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Express", "PostgreSQL", "Drizzle ORM"],
     liveUrl: "https://analyio.com",
     category: "saas",
-    year: "2025",
   },
   {
     title: "SocialProofly",
@@ -127,7 +121,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     liveUrl: "https://socialproofly.com",
     category: "saas",
-    year: "2025",
   },
   {
     title: "Jordan",
@@ -145,7 +138,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://jordan-production.up.railway.app",
     category: "travel",
-    year: "2025",
   },
   {
     title: "Co-Working Space",
@@ -163,6 +155,5 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://co-working-w-production.up.railway.app",
     category: "local-business",
-    year: "2025",
   },
 ];
