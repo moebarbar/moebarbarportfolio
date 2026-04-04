@@ -22,6 +22,24 @@ export const categories = [
 
 export const projects: Project[] = [
   {
+    title: "PromptUpp",
+    tagline: "8,000+ expert AI prompts, ready to use in seconds",
+    description: "A professional AI prompt library giving users instant access to thousands of expert-crafted prompts for ChatGPT, Claude, and more — spanning marketing, sales, coding, SEO, writing, legal, and HR.",
+    concept: "PromptUpp was built around a simple but powerful idea: most people using AI tools struggle to get great results because they don't know how to prompt effectively. By offering a curated library of 8,000+ battle-tested prompts organized by use case, PromptUpp removes that friction entirely — letting users copy, paste, and get professional-grade AI output immediately, for free.",
+    role: "Full-Stack Developer — Architected and built the entire platform including the prompt library UI, category filtering system, search functionality, and the conversion-optimized marketing pages.",
+    highlights: [
+      "8,000+ expert prompts organized across dozens of categories",
+      "Instant copy-paste workflow with zero friction",
+      "Advanced search and category filtering for fast discovery",
+      "Covers marketing, sales, coding, SEO, writing, legal, HR & more",
+      "Free access model designed for maximum user adoption",
+      "Clean, fast UI optimized for daily professional use",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Express", "PostgreSQL", "Drizzle ORM"],
+    liveUrl: "https://www.promptupp.com",
+    category: "saas",
+  },
+  {
     title: "Créatifia",
     tagline: "Where creativity meets technology",
     description: "A creative digital agency website delivering innovative solutions with a sleek, modern interface and seamless user experience.",
