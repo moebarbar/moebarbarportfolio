@@ -4,7 +4,7 @@ import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
 import { Link } from "wouter";
 import { projects } from "@/data/projects";
 
-const homeProjects = projects.slice(0, 3);
+const homeProjects = projects.slice(-3);
 
 interface ProjectPreviewProps {
   url: string;
@@ -224,19 +224,34 @@ export function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-20"
         >
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary/10 text-primary border border-primary/30 rounded-full font-semibold text-lg hover:bg-primary hover:text-white transition-all duration-300 group"
-            data-testid="view-all-projects"
-          >
-            View All Projects
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <p className="text-muted-foreground text-sm mt-3">
-            {projects.length} projects across {projects.length > 3 ? "multiple" : "various"} categories
-          </p>
+          <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.04] via-transparent to-cyan-500/[0.04] pointer-events-none" />
+
+            <div className="relative flex items-center gap-6">
+              <div className="text-center sm:text-left">
+                <div className="flex items-end gap-2 justify-center sm:justify-start">
+                  <span className="text-6xl sm:text-7xl font-bold font-syne text-primary leading-none tabular-nums">
+                    {projects.length}
+                  </span>
+                  <span className="text-lg text-muted-foreground mb-2">projects</span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  across {[...new Set(projects.map(p => p.category))].length} categories — and counting
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href="/projects"
+              className="relative inline-flex items-center gap-3 px-7 py-4 bg-primary text-white rounded-full font-semibold text-base hover:bg-primary/90 transition-all duration-300 group shadow-[0_0_24px_-6px_rgba(124,58,237,0.5)]"
+              data-testid="view-all-projects"
+            >
+              View Full Portfolio
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
