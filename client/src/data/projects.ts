@@ -22,6 +22,23 @@ export const categories = [
 
 export const projects: Project[] = [
   {
+    title: "Velorah",
+    tagline: "A premium digital experience crafted to impress",
+    description: "A stunning hero-focused website built to captivate from the first scroll — bold visuals, refined typography, and seamless motion design that leaves a lasting impression.",
+    concept: "Velorah was designed to make an immediate, unforgettable impact. The project centers around a cinematic hero experience — where visuals, copy, and animation come together to communicate prestige and quality instantly. Every design decision was made with intention: to draw the visitor in and guide them naturally through the narrative.",
+    role: "Frontend Developer & Designer — Conceived and built the full experience, focusing on hero animation, visual hierarchy, performance, and responsive fidelity across all screen sizes.",
+    highlights: [
+      "Cinematic hero section with immersive full-screen design",
+      "Refined motion design with smooth entrance animations",
+      "Bold typographic hierarchy using premium font pairing",
+      "Performance-optimized with fast load times",
+      "Fully responsive with pixel-perfect mobile layout",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://velorah-hero-production.up.railway.app",
+    category: "business",
+  },
+  {
     title: "PromptUpp",
     tagline: "8,000+ expert AI prompts, ready to use in seconds",
     description: "A professional AI prompt library giving users instant access to thousands of expert-crafted prompts for ChatGPT, Claude, and more — spanning marketing, sales, coding, SEO, writing, legal, and HR.",
