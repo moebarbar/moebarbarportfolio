@@ -8,6 +8,7 @@ export interface Project {
   techStack: string[];
   liveUrl: string;
   category: string;
+  featured?: boolean;
 }
 
 export const categories = [
@@ -37,6 +38,7 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://velorah-hero-production.up.railway.app",
     category: "business",
+    featured: true,
   },
   {
     title: "PromptUpp",
@@ -55,6 +57,7 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Express", "PostgreSQL", "Drizzle ORM"],
     liveUrl: "https://www.promptupp.com",
     category: "saas",
+    featured: true,
   },
   {
     title: "Créatifia",
@@ -207,5 +210,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://vex-website-production.up.railway.app",
     category: "business",
+    featured: true,
   },
 ];

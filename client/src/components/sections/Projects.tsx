@@ -4,7 +4,7 @@ import { ExternalLink, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
 import { Link } from "wouter";
 import { projects } from "@/data/projects";
 
-const homeProjects = projects.slice(-3);
+const homeProjects = projects.filter(p => p.featured);
 
 interface ProjectPreviewProps {
   url: string;
