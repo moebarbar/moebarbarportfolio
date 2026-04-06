@@ -191,4 +191,21 @@ export const projects: Project[] = [
     liveUrl: "https://co-working-w-production.up.railway.app",
     category: "local-business",
   },
+  {
+    title: "VEX",
+    tagline: "Investing · Building · Advisory",
+    description: "A bold venture capital and advisory firm website — built to communicate vision, attract founders, and position VEX as the partner of choice for the next generation of companies.",
+    concept: "VEX backs visionaries and crafts ventures that define what comes next. The website needed to reflect that ambition — a dark, authoritative aesthetic with commanding typography and sharp copy that signals to bold founders that VEX is the right partner to build with. Every section was designed to inspire confidence and communicate decisive leadership.",
+    role: "Frontend Developer — Designed and built the full site, crafting a visual identity that balances prestige with edge, and a content structure that clearly communicates VEX's three pillars: Investing, Building, and Advisory.",
+    highlights: [
+      "High-impact hero communicating the VEX investment thesis",
+      "Three-pillar layout covering Invest, Build, and Advisory services",
+      "Dark premium aesthetic with sharp typographic hierarchy",
+      "Founder-facing copy optimized for credibility and conversion",
+      "Smooth scroll animations and performance-first build",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://vex-website-production.up.railway.app",
+    category: "business",
+  },
 ];
