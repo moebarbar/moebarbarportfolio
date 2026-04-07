@@ -22,6 +22,25 @@ export const categories = [
 
 export const projects: Project[] = [
   {
+    title: "SkyElite",
+    tagline: "Fly private, fly elite",
+    description: "A premium private jet charter website built for discerning travelers — featuring 340+ global destinations, same-day booking, and a dedicated concierge experience.",
+    concept: "SkyElite was built to embody the essence of luxury air travel. Every design decision reflects the brand's promise: privacy, precision, and prestige. The site speaks directly to high-net-worth individuals who expect the same level of craft in their digital experience as they do in their flights — an ultra-clean dark aesthetic, commanding typography, and frictionless booking flow that signals world-class service before a single word is read.",
+    role: "Frontend Developer — Designed and developed the full website, crafting a visual identity that communicates exclusivity and trust, with a conversion-focused layout built around same-day booking and concierge inquiries.",
+    highlights: [
+      "Ultra-premium dark aesthetic with cinematic hero section",
+      "340+ destination showcase with global route coverage",
+      "Same-day booking flow with concierge inquiry integration",
+      "Trust-building design targeting high-net-worth clientele",
+      "Smooth scroll animations and luxury micro-interactions",
+      "Fully responsive with flawless mobile experience",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://skyelite-project-production.up.railway.app",
+    category: "travel",
+    featured: true,
+  },
+  {
     title: "Velorah",
     tagline: "A premium digital experience crafted to impress",
     description: "A stunning hero-focused website built to captivate from the first scroll — bold visuals, refined typography, and seamless motion design that leaves a lasting impression.",
@@ -175,25 +194,6 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://jordan-production.up.railway.app",
     category: "travel",
-  },
-  {
-    title: "SkyElite",
-    tagline: "Fly private, fly elite",
-    description: "A premium private jet charter website built for discerning travelers — featuring 340+ global destinations, same-day booking, and a dedicated concierge experience.",
-    concept: "SkyElite was built to embody the essence of luxury air travel. Every design decision reflects the brand's promise: privacy, precision, and prestige. The site speaks directly to high-net-worth individuals who expect the same level of craft in their digital experience as they do in their flights — an ultra-clean dark aesthetic, commanding typography, and frictionless booking flow that signals world-class service before a single word is read.",
-    role: "Frontend Developer — Designed and developed the full website, crafting a visual identity that communicates exclusivity and trust, with a conversion-focused layout built around same-day booking and concierge inquiries.",
-    highlights: [
-      "Ultra-premium dark aesthetic with cinematic hero section",
-      "340+ destination showcase with global route coverage",
-      "Same-day booking flow with concierge inquiry integration",
-      "Trust-building design targeting high-net-worth clientele",
-      "Smooth scroll animations and luxury micro-interactions",
-      "Fully responsive with flawless mobile experience",
-    ],
-    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://skyelite-project-production.up.railway.app",
-    category: "travel",
-    featured: true,
   },
   {
     title: "VEX",
