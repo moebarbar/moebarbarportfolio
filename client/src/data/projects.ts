@@ -193,6 +193,7 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://skyelite-project-production.up.railway.app",
     category: "travel",
+    featured: true,
   },
   {
     title: "VEX",
@@ -210,6 +211,5 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://vex-website-production.up.railway.app",
     category: "business",
-    featured: true,
   },
 ];
