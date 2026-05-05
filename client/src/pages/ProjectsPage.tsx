@@ -45,8 +45,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group"
+      className="group cursor-pointer"
       data-testid={`project-card-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
+      onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
+      role="link"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+        }
+      }}
     >
       <div className="relative rounded-3xl overflow-hidden bg-white/[0.02] border border-white/[0.06] hover:border-primary/20 transition-all duration-700">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-cyan-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -74,6 +83,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
                     >
                       <ExternalLink size={14} />
@@ -181,7 +191,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </AnimatePresence>
 
               <button
-                onClick={() => setExpanded(!expanded)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExpanded(!expanded);
+                }}
                 className="text-xs font-medium text-primary hover:text-white transition-colors"
                 data-testid={`toggle-details-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
               >
@@ -211,6 +224,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary border border-primary/30 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300 group/btn"
                 data-testid={`project-live-link-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
               >

@@ -90,12 +90,12 @@ function ProjectPreview({ url, title }: ProjectPreviewProps) {
           <iframe
             src={url}
             title={`Preview of ${title}`}
-            className={`w-full h-full border-0 transition-opacity duration-500 ${
+            className={`w-full h-full border-0 transition-opacity duration-500 pointer-events-none ${
               status === "loaded" ? "opacity-100" : "opacity-0"
             }`}
             onLoad={handleLoad}
             onError={handleError}
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+            sandbox="allow-scripts allow-same-origin"
             loading="lazy"
           />
 
@@ -157,8 +157,17 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1 }}
-              className="group"
+              className="group cursor-pointer"
               data-testid={`project-${index}`}
+              onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+                }
+              }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
@@ -197,6 +206,7 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary border border-primary/30 rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300"
                       data-testid={`project-link-${index}`}
                     >
@@ -205,6 +215,7 @@ export function Projects() {
                     </a>
                     <Link
                       href="/projects"
+                      onClick={(e) => e.stopPropagation()}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       Full Details →
