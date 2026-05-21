@@ -11,8 +11,8 @@ import type { BlogPost } from "@shared/schema";
 export default function Blog() {
   useEffect(() => {
     updateMetaTags({
-      title: "Blog | Moe Barbar - Frontend Development Insights",
-      description: "Articles on frontend development, React, TypeScript, UI/UX design, and building better web experiences by Moe Barbar.",
+      title: "Blog | Moe Barbar - Full-Stack Development Insights",
+      description: "Articles on full-stack development, React, Next.js, TypeScript, Node.js, PostgreSQL, and building better web experiences end-to-end by Moe Barbar.",
       url: `${window.location.origin}/blog`,
     });
     return () => resetMetaTags();
@@ -42,7 +42,7 @@ export default function Blog() {
               Blog
             </h1>
             <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-2">
-              Thoughts on frontend development, UI/UX, and building better web experiences.
+              Thoughts on full-stack development, React, Node.js, databases, and building better web experiences end-to-end.
             </p>
           </motion.div>
 
