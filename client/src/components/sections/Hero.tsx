@@ -73,6 +73,53 @@ export function Hero() {
               LinkedIn
             </a>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            className="mt-12 sm:mt-16"
+          >
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-muted-foreground/70">
+                <span className="h-px w-8 bg-gradient-to-r from-transparent to-primary/40" />
+                <span className="text-primary/80">JavaScript</span>
+                <span className="text-muted-foreground/40">/</span>
+                <span className="text-primary/80">TypeScript</span>
+                <span className="text-muted-foreground/40">Native</span>
+                <span className="h-px w-8 bg-gradient-to-l from-transparent to-primary/40" />
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-3xl">
+                {[
+                  { label: "JavaScript", glow: true },
+                  { label: "TypeScript", glow: true },
+                  { label: "React" },
+                  { label: "Next.js" },
+                  { label: "Node.js" },
+                  { label: "Express" },
+                  { label: "PostgreSQL" },
+                  { label: "Drizzle" },
+                  { label: "Tailwind" },
+                  { label: "Stripe" },
+                ].map((tech, i) => (
+                  <motion.span
+                    key={tech.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 1 + i * 0.05 }}
+                    className={`px-3 py-1.5 text-[11px] sm:text-xs font-medium rounded-full backdrop-blur-md transition-all hover:scale-105 ${
+                      tech.glow
+                        ? "bg-primary/15 text-primary border border-primary/40 shadow-[0_0_18px_-4px_rgba(124,58,237,0.5)]"
+                        : "bg-white/[0.04] text-zinc-300 border border-white/10 hover:border-white/20"
+                    }`}
+                  >
+                    {tech.label}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
