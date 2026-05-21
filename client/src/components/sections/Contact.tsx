@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Briefcase } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
@@ -114,6 +114,28 @@ export function Contact() {
                   <h4 className="text-white font-medium mb-1 text-sm sm:text-base">Location</h4>
                   <p className="text-muted-foreground text-sm sm:text-base">Houston, TX • US Citizen</p>
                   <p className="text-muted-foreground/70 text-xs sm:text-sm">Open to Remote & On-site</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 rounded-full bg-white/5 text-cyan-400">
+                  <Briefcase size={20} className="sm:w-6 sm:h-6" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-2 text-sm sm:text-base">Availability</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base mb-3">
+                    Open to new projects — short-term contracts, long-term engagements, and full-time roles.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["W2", "1099", "Contract", "Full-Time", "Short-Term", "Long-Term"].map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-[11px] font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

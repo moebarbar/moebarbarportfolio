@@ -245,8 +245,8 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     updateMetaTags({
-      title: "Projects | Moe Barbar - Frontend Developer Portfolio",
-      description: "Explore the full collection of web projects by Moe Barbar — from SaaS platforms to creative business sites, all built with modern frontend technologies.",
+      title: "Projects | Moe Barbar - Full-Stack Developer Portfolio",
+      description: "Explore the full collection of web projects by Moe Barbar — from full-stack SaaS platforms to creative business sites, all built end-to-end with modern web technologies.",
       url: `${window.location.origin}/projects`,
     });
     window.scrollTo(0, 0);

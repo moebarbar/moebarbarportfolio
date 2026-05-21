@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a personal portfolio website for Moe Barbar, a Frontend-Focused Full-Stack Web Developer. The site showcases frontend expertise through a highly interactive, dark-mode-first design with smooth animations, a blog system, and a contact form. It's built as a monorepo with a React frontend and Express backend, using PostgreSQL for data persistence.
+This is a personal portfolio website for Moe Barbar, a Full-Stack Web Developer. The site showcases frontend expertise through a highly interactive, dark-mode-first design with smooth animations, a blog system, and a contact form. It's built as a monorepo with a React frontend and Express backend, using PostgreSQL for data persistence.
 
 The site includes: Hero section, About, Skills, Code Showcase, Projects (with live iframe previews), Experience timeline, Blog (with full CRUD), Contact form, and a responsive Navbar with smooth scroll navigation.
 

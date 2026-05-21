@@ -26,7 +26,7 @@ export function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm mb-6 sm:mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-muted-foreground font-medium">US-Based • Available for Remote Teams</span>
+              <span className="text-muted-foreground font-medium">US-Based • Full-Stack • Open to W2 & 1099</span>
             </div>
           </motion.div>
 
@@ -36,7 +36,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-syne leading-tight tracking-tighter mb-4 sm:mb-6"
           >
-            Frontend Focused.
+            Full-Stack Developer.
             <br />
             <span className="text-gradient-primary">Pixel Perfectionist.</span>
           </motion.h1>
@@ -47,8 +47,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 font-light leading-relaxed px-2"
           >
-            I craft clean, high-performance user interfaces with excellent UX and smooth interactions. 
-            Frontend-focused full-stack developer specializing in React, modern animations, and responsive design.
+            I design, build, and ship complete web applications end-to-end — from polished React interfaces
+            and smooth animations to type-safe APIs, databases, auth, and deployment.
           </motion.p>
 
           <motion.div

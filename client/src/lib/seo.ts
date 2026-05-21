@@ -11,8 +11,8 @@ export function updateMetaTags(options: {
   };
 }) {
   const {
-    title = "Moe Barbar | Frontend-Focused Full-Stack Web Developer",
-    description = "US-based Frontend-Focused Full-Stack Web Developer specializing in React, TypeScript, and building clean, high-performance user interfaces.",
+    title = "Moe Barbar | Full-Stack Web Developer",
+    description = "US-based Full-Stack Web Developer building complete web applications end-to-end — React, Next.js, TypeScript, Node.js, PostgreSQL, Stripe, and deployment. Open to W2 & 1099, short-term and long-term.",
     url,
     image,
     type = "website",

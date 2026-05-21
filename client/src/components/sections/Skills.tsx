@@ -1,39 +1,91 @@
 import { motion } from "framer-motion";
-import { 
-  Code2, 
-  Cpu, 
-  Figma, 
-  Layout, 
-  MonitorSmartphone,
-  Server
+import {
+  Code2,
+  Server,
+  Database,
+  ShieldCheck,
+  Cloud,
+  Wrench,
 } from "lucide-react";
 
 const skills = [
   {
-    category: "Frontend Core",
+    category: "Frontend",
     icon: <Code2 className="w-6 h-6 text-primary" />,
-    items: ["React", "JavaScript (ES6+)", "TypeScript", "HTML5/CSS3", "Next.js"]
+    items: [
+      "TypeScript / JavaScript",
+      "React • Next.js",
+      "Tailwind CSS • shadcn/ui",
+      "Framer Motion • GSAP",
+      "TanStack Query • Zustand",
+      "Vite • Turbopack",
+    ],
   },
   {
-    category: "UI & Styling",
-    icon: <Layout className="w-6 h-6 text-accent" />,
-    items: ["Tailwind CSS", "Framer Motion", "GSAP", "Responsive Design", "Shadcn UI"]
+    category: "Backend",
+    icon: <Server className="w-6 h-6 text-accent" />,
+    items: [
+      "Node.js • Bun",
+      "Express • Fastify • Hono",
+      "Next.js API Routes / Server Actions",
+      "REST • GraphQL • tRPC",
+      "Zod Validation",
+      "WebSockets • SSE",
+    ],
   },
   {
-    category: "Design & UX",
-    icon: <Figma className="w-6 h-6 text-purple-400" />,
-    items: ["Figma", "Accessibility (a11y)", "User Flows", "Wireframing", "Prototyping"]
+    category: "Database & ORM",
+    icon: <Database className="w-6 h-6 text-purple-400" />,
+    items: [
+      "PostgreSQL • MySQL • SQLite",
+      "MongoDB • Mongoose",
+      "Drizzle ORM • Prisma",
+      "Redis (cache / queue)",
+      "Supabase • Neon",
+      "Schema design & migrations",
+    ],
   },
   {
-    category: "Supporting Skills",
-    icon: <Server className="w-6 h-6 text-pink-400" />,
-    items: ["Node.js", "Git/GitHub", "API Integration", "Basic AI Integration", "Vite"]
-  }
+    category: "Auth & Payments",
+    icon: <ShieldCheck className="w-6 h-6 text-pink-400" />,
+    items: [
+      "Auth.js (NextAuth)",
+      "Clerk • Supabase Auth • Lucia",
+      "JWT • Sessions • OAuth",
+      "Stripe Checkout & Subscriptions",
+      "Webhooks & secure delivery",
+      "Role-based access control",
+    ],
+  },
+  {
+    category: "Infra & DevOps",
+    icon: <Cloud className="w-6 h-6 text-cyan-400" />,
+    items: [
+      "Vercel • Railway • Render",
+      "Netlify • Fly.io • AWS / GCP",
+      "S3 • Cloudflare R2 • Supabase Storage",
+      "BullMQ • Inngest • Trigger.dev",
+      "Resend • Postmark • SendGrid",
+      "GitHub Actions CI/CD",
+    ],
+  },
+  {
+    category: "Tooling & Testing",
+    icon: <Wrench className="w-6 h-6 text-amber-400" />,
+    items: [
+      "pnpm • npm • Bun",
+      "Git • GitHub workflows",
+      "Vitest • Jest (unit)",
+      "Playwright (E2E)",
+      "ESLint • Prettier",
+      "Figma • Accessibility (a11y)",
+    ],
+  },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" aria-label="Technical skills and capabilities" className="py-24 bg-muted/30">
+    <section id="skills" aria-label="Full-stack technical capabilities" className="py-24 bg-muted/30">
       <div className="container px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,13 +93,13 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-4 sm:mb-6">Technical Capabilities</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-syne mb-4 sm:mb-6">The Full Stack</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My expertise is centered on the frontend ecosystem, supported by solid full-stack knowledge.
+            From the first pixel to production deploy — here's everything I use to design, build, and ship complete web applications.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((group, index) => (
             <motion.div
               key={group.category}

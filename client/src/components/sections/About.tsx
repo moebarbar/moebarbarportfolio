@@ -54,7 +54,7 @@ export function About() {
                         System.Identity
                      </div>
                      <h3 className="text-xl sm:text-2xl md:text-3xl font-syne font-bold text-white mb-1 sm:mb-2">Moe Barbar</h3>
-                     <p className="text-zinc-400 text-sm sm:text-base">Frontend Engineer</p>
+                     <p className="text-zinc-400 text-sm sm:text-base">Full-Stack Engineer</p>
                   </div>
                </div>
 
@@ -76,7 +76,7 @@ export function About() {
             </h2>
             
             <p className="text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg">
-               I am a Frontend-focused Full-Stack Web Developer with a passion for building beautiful, responsive, and high-performance web applications. My main strength is crafting polished user interfaces that delight users.
+               I am a Full-Stack Web Developer who owns the whole product — from pixel-perfect interfaces and motion design to APIs, databases, auth, payments, and deployment. I ship complete, polished applications that look great and run fast.
             </p>
 
             <div className="space-y-4 sm:space-y-6">
@@ -105,8 +105,8 @@ export function About() {
                   <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-syne">Full-Stack Context</h4>
-                  <p className="text-muted-foreground text-sm sm:text-base">I understand the backend, which makes me a better frontend developer. I can connect APIs and handle data efficiently.</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-syne">End-to-End Ownership</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">I build the whole stack — React frontends, Node/Express APIs, PostgreSQL schemas, auth, Stripe, and deployment. One developer, one cohesive product.</p>
                 </div>
               </div>
             </div>
