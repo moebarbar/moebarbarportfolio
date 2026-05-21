@@ -50,6 +50,108 @@ const codeSnippets = [
   return position;
 };`,
   },
+  {
+    title: "TanStack Query",
+    language: "tsx",
+    code: `const { data, isLoading } = useQuery({
+  queryKey: ['projects', userId],
+  queryFn: async () => {
+    const res = await fetch(\`/api/projects/\${userId}\`);
+    if (!res.ok) throw new Error('Failed');
+    return res.json() as Promise<Project[]>;
+  },
+  staleTime: 60_000,
+});
+
+if (isLoading) return <Spinner />;
+return <ProjectGrid items={data ?? []} />;`,
+  },
+  {
+    title: "Express API",
+    language: "ts",
+    code: `app.post('/api/contact', async (req, res) => {
+  const result = contactSchema.safeParse(req.body);
+
+  if (!result.success) {
+    return res.status(400).json({
+      message: 'Invalid input',
+      errors: result.error.flatten(),
+    });
+  }
+
+  const saved = await storage.createMessage(result.data);
+  return res.status(201).json(saved);
+});`,
+  },
+  {
+    title: "Drizzle Schema",
+    language: "ts",
+    code: `export const blogPosts = pgTable('blog_posts', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  slug: text('slug').notNull().unique(),
+  title: text('title').notNull(),
+  content: text('content').notNull(),
+  tags: text('tags').array().notNull().default([]),
+  publishedAt: timestamp('published_at').defaultNow(),
+});
+
+export const insertBlogPostSchema = createInsertSchema(blogPosts)
+  .omit({ id: true, publishedAt: true });
+
+export type BlogPost = typeof blogPosts.$inferSelect;`,
+  },
+  {
+    title: "Zod Validation",
+    language: "ts",
+    code: `const checkoutSchema = z.object({
+  email: z.string().email(),
+  items: z.array(z.object({
+    productId: z.string().uuid(),
+    quantity: z.number().int().positive(),
+  })).min(1),
+  promoCode: z.string().optional(),
+});
+
+type Checkout = z.infer<typeof checkoutSchema>;
+
+const data = checkoutSchema.parse(req.body);`,
+  },
+  {
+    title: "Stripe Webhook",
+    language: "ts",
+    code: `app.post('/api/stripe/webhook', async (req, res) => {
+  const sig = req.headers['stripe-signature'] as string;
+  const event = stripe.webhooks.constructEvent(
+    req.body,
+    sig,
+    process.env.STRIPE_WEBHOOK_SECRET!,
+  );
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    await storage.fulfillOrder(session.id);
+  }
+
+  res.json({ received: true });
+});`,
+  },
+  {
+    title: "Auth Middleware",
+    language: "ts",
+    code: `export const requireAuth: RequestHandler = async (req, res, next) => {
+  const token = req.cookies.session;
+  if (!token) return res.status(401).json({ error: 'Unauthorized' });
+
+  try {
+    const payload = jwt.verify(token, process.env.JWT_SECRET!);
+    req.user = await storage.getUser(payload.sub as string);
+    if (!req.user) throw new Error('User not found');
+    next();
+  } catch {
+    res.status(401).json({ error: 'Invalid session' });
+  }
+};`,
+  },
 ];
 
 function TypeWriter({ text, onComplete }: { text: string; onComplete?: () => void }) {
