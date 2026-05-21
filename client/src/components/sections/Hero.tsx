@@ -4,7 +4,7 @@ import heroBg from "@assets/generated_images/abstract_dark_neon_fluid_glassmorph
 
 export function Hero() {
   return (
-    <section aria-label="Hero introduction" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section aria-label="Hero introduction" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-28 sm:pb-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -148,7 +148,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
       >
         <ArrowDown className="text-muted-foreground w-6 h-6" />
       </motion.div>
