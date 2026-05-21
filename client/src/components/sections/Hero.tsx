@@ -148,7 +148,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+        className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
       >
         <ArrowDown className="text-muted-foreground w-6 h-6" />
       </motion.div>
