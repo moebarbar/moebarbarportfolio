@@ -92,29 +92,25 @@ export function Hero() {
 
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-3xl">
                 {[
-                  { label: "JavaScript", glow: true },
-                  { label: "TypeScript", glow: true },
-                  { label: "React" },
-                  { label: "Next.js" },
-                  { label: "Node.js" },
-                  { label: "Express" },
-                  { label: "PostgreSQL" },
-                  { label: "Drizzle" },
-                  { label: "Tailwind" },
-                  { label: "Stripe" },
-                ].map((tech, i) => (
+                  "JavaScript",
+                  "TypeScript",
+                  "React",
+                  "Next.js",
+                  "Node.js",
+                  "Express",
+                  "PostgreSQL",
+                  "Drizzle",
+                  "Tailwind",
+                  "Stripe",
+                ].map((label, i) => (
                   <motion.span
-                    key={tech.label}
+                    key={label}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 1 + i * 0.05 }}
-                    className={`px-3 py-1.5 text-[11px] sm:text-xs font-medium rounded-full backdrop-blur-md transition-all hover:scale-105 ${
-                      tech.glow
-                        ? "bg-primary/15 text-primary border border-primary/40 shadow-[0_0_18px_-4px_rgba(124,58,237,0.5)]"
-                        : "bg-white/[0.04] text-zinc-300 border border-white/10 hover:border-white/20"
-                    }`}
+                    className="px-3 py-1.5 text-[11px] sm:text-xs font-medium rounded-full backdrop-blur-md transition-all hover:scale-105 bg-primary/15 text-primary border border-primary/40 shadow-[0_0_18px_-4px_rgba(124,58,237,0.5)]"
                   >
-                    {tech.label}
+                    {label}
                   </motion.span>
                 ))}
               </div>
