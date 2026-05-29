@@ -101,7 +101,7 @@ export async function registerRoutes(
   app.get("/sitemap.xml", async (req, res) => {
     try {
       const posts = await storage.getBlogPosts();
-      const baseUrl = `${req.protocol}://${req.get("host")}`;
+      const baseUrl = `https://${req.get("host")}`;
       
       let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -135,7 +135,7 @@ export async function registerRoutes(
   });
 
   app.get("/robots.txt", (req, res) => {
-    const baseUrl = `${req.protocol}://${req.get("host")}`;
+    const baseUrl = `https://${req.get("host")}`;
     res.set("Content-Type", "text/plain");
     res.send(`User-agent: *
 Allow: /

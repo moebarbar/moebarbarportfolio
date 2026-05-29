@@ -36,7 +36,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-syne leading-tight tracking-tighter mb-4 sm:mb-6"
           >
-            Full-Stack Developer.
+            Full-Stack Web Developer.
             <br />
             <span className="text-gradient-primary">Pixel Perfectionist.</span>
           </motion.h1>
