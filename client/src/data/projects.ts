@@ -17,6 +17,7 @@ export const categories = [
   { id: "business", label: "Business" },
   { id: "food-drink", label: "Food & Drink" },
   { id: "social", label: "Social Media" },
+  { id: "health-wellness", label: "Health & Wellness" },
   { id: "travel", label: "Travel" },
 ];
 
@@ -301,5 +302,24 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://vex-website-production.up.railway.app",
     category: "business",
+  },
+  {
+    title: "mėntality",
+    tagline: "Gentle tools for your mental wellbeing",
+    description: "A calm, supportive mental wellbeing platform offering guided self-assessments, 120+ curated resources, and a path to finding the right help — designed to meet people exactly where they are.",
+    concept: "mėntality was built around a simple belief: getting support for your mental health shouldn't feel clinical or overwhelming. The experience is intentionally gentle — soft visuals, reassuring language, and a guided flow that invites people to share how they feel, receive a thoughtful reading, explore what helps, and connect with real support. Every interaction is designed to lower the barrier to seeking help and make the first step feel safe.",
+    role: "Frontend Developer & Designer — Designed and built the full platform, crafting a calming visual identity, the guided assessment flow, a searchable resource library, and an education center structured to make sensitive content approachable and easy to navigate.",
+    highlights: [
+      "Guided self-assessments — \"tell us how you feel, get a gentle reading\"",
+      "120+ curated mental wellbeing resources organized for easy discovery",
+      "\"Find help\" support directory connecting users to real support",
+      "Education center making sensitive topics approachable",
+      "Warm, calming aesthetic designed to reduce anxiety and build trust",
+      "Fully responsive and accessibility-minded across all devices",
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://intelligentx-production.up.railway.app",
+    category: "health-wellness",
+    featured: true,
   },
 ];
